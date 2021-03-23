@@ -27,6 +27,7 @@ fixtures/
 
 # token files
 *.token
+.pypirc
 
 #################
 
