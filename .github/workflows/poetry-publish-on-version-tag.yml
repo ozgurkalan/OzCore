@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [3.8, 3.9]
+        python-version: [3.8]
         poetry-version: [1.1.2]
 
     runs-on: ubuntu-latest
@@ -33,18 +33,9 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install poetry==${{ matrix.poetry-version }}
 
-    - name: View poetry --help
-      run: poetry --help
 
     - name: Install dependencies
-      shell: bash
-      run: python -m poetry install
+      run: poetry install
 
-    - name: Test with pytest
-      run: |
-        python -m poetry run python -m pytest -v tests
-
-    - name: Publish
-      run: |
-        python -m poetry build
-        python -m poetry publish --username __token__ --password ${{ secrets.pypi_password }}
+    - name: Build
+      run: poetry build
