@@ -1,0 +1,9 @@
+===================
+Path Folder Methods
+===================
+
+Helper methods for Posixpath and for essential Folders.
+
+
+.. autoclass:: ozcore.core.path.folders.Folder
+	:members:

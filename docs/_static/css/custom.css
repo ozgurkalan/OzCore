@@ -1,0 +1,12 @@
+.rst-content .admonition-todo .admonition-title{
+    background-color: pink!important;
+}
+.rst-content .admonition-todo {
+    background-color: lavender!important;
+
+}
+
+
+.py.class .py {
+	border-bottom:1px solid salmon!important;
+}
