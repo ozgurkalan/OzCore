@@ -40,5 +40,8 @@ jobs:
     - name: Install dependencies
       run: poetry install
 
+    - name: poetry-dynamic-versioning
+      run: poetry-dynamic-versioning
+      
     - name: Build
       run: poetry build
