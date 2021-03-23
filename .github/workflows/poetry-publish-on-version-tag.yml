@@ -1,6 +1,7 @@
 # https://dev.to/iancleary/test-and-publish-a-python-package-to-pypi-using-poetry-and-github-actions-186a
-# mimic the action as in dev.to article
 # https://www.alexanderjunge.net/blog/github-actions-poetry-ci/
+# https://nicholasnadeau.me/post/2020/8/one-version-to-rule-them-all-keeping-your-python-package-version-number-in-sync-with-git-and-poetry/
+
 
 name: Publish Python package on version tag
 on:
@@ -40,8 +41,15 @@ jobs:
     - name: Install dependencies
       run: poetry install
 
+    - name: Test with pytest
+      run: |
+        python -m poetry run python -m pytest -v tests
+
     - name: set version 
       run: poetry version $(git describe --tags --abbrev=0)
 
-    - name: Build
+    - name: build
       run: poetry build
+
+    - name: publish
+      run: poetry publish -username __token__ --password ${{ secrets.pypi_password }}
