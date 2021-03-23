@@ -1,0 +1,28 @@
+=============================
+CSV operations helper classes
+=============================
+
+In order to ease the CSV related operations, there are two helper classes to assist. 
+
+Module Core is directly calling the Base class. 
+Process class is for manipulating CSV files and should be called explictly.
+
+
+
+Base Class CSV
+~~~~~~~~~~~~~~
+
+.. automodule:: ozcore.core.data.csv.base
+	:members:
+	:no-special-members:
+
+
+
+Process Class CSV
+~~~~~~~~~~~~~~~~~
+
+.. automodule:: ozcore.core.data.csv.process
+	:members:
+	:no-special-members:
+
+

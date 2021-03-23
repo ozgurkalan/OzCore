@@ -1,0 +1,42 @@
+================
+ag-Grid extended
+================
+
+ipyaggrid is designed to enable easy access to basic ag-Grid features but allows customization through a full access to the ag-Grid API.
+
+.. hint::
+
+	This grid is very useful for data mangling with Pandas.
+
+
+Basic aggrid usage:
+~~~~~~~~~~~~~~~~~~~
+
+.. code::
+
+	from ozcore import core
+	core.gridag.view(df)
+
+
+Available themes:
+~~~~~~~~~~~~~~~~~
+
+* ag-theme-balham
+* ag-theme-balham-dark
+* ag-theme-material
+* ag-theme-fresh
+* ag-theme-dark
+* ag-theme-blue
+* ag-theme-bootstrap
+* ag-theme-excel
+
+
+-----
+
+Module aggrid
+~~~~~~~~~~~~~
+
+
+.. automodule:: ozcore.core.aggrid.aggrid
+	:members:
+	:inherited-members:

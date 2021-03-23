@@ -1,0 +1,7 @@
+=============
+Dummy Records
+=============
+
+.. automodule:: ozcore.core.data.dummy
+	:members:
+	:no-special-members:

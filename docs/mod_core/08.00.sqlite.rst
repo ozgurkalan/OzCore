@@ -1,0 +1,35 @@
+================================
+SQLite operations helper classes
+================================
+
+SQLite operations are a bit tricky. In order to ease the SQLite related operations, there are two helper classes to assist. 
+
+Mainly, only ``Sqlite`` class in ``sqlite`` module is used. The module and class separation is made due to better code managament.
+
+All methods can be directly called from ``core``.
+
+Example::
+
+	from ozcore import core
+
+	core.sql.read(...)
+
+
+Sqlite Class
+~~~~~~~~~~~~
+
+.. automodule:: ozcore.core.data.sqlite.sqlite
+	:members:
+	:no-special-members:
+
+-----
+
+ORM Class
+~~~~~~~~~~
+
+.. automodule:: ozcore.core.data.sqlite.orm
+	:members:
+	:no-special-members:
+
+
+

@@ -1,0 +1,10 @@
+=======================
+TMP Folders and Files
+=======================
+
+Helper class for Temporary Folders and Files
+
+
+.. autoclass:: ozcore.core.path.tmp_folders.TMP_Folder
+	:members:
+	:no-special-members:

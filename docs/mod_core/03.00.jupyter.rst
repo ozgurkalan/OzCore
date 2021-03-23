@@ -1,0 +1,8 @@
+======================
+Jupyter Notebook Setup
+======================
+
+
+
+.. automodule:: ozcore.core.jupyter
+	:members:

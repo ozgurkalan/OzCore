@@ -1847,10 +1847,13 @@ python-versions = "*"
 [package.dependencies]
 notebook = ">=4.4.1"
 
+[extras]
+test = []
+
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "df3f953902e056199a546f0bc5d0dccbfed4b47f11db7962882b6459a82c8365"
+content-hash = "99eb02dbff7ac6ccea08f592232c5e49b4db8a54fce16da5bf0626335404f81a"
 
 [metadata.files]
 alabaster = [

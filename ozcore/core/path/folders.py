@@ -30,7 +30,7 @@ class Folder:
 
     Example, Search Downloads folder::
 
-        from ozbot import core
+        from ozcore import core
         core.folder.search(path=core.folder.Downloads, file="the_file_searched.xl**")
 
     Example, is_a_subfolder::
@@ -130,7 +130,7 @@ class Folder:
 
         parameters:
             path: a str or posixpath path
-            file: str, file to search; searches as glob, e.g. "**/.json"
+            file: str, file to search; searches as glob, e.g. **"**/.json"**
 
         returns:
             list, files in POSIXPATH type
