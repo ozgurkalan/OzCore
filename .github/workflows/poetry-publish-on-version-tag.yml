@@ -41,7 +41,8 @@ jobs:
       run: poetry install
 
     - name: poetry-dynamic-versioning
+      shell: bash
       run: poetry-dynamic-versioning
-      
+
     - name: Build
       run: poetry build
