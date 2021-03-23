@@ -40,8 +40,8 @@ jobs:
     - name: Install dependencies
       run: poetry install
 
-    - name: version
-      run: poetry version 1.5.5
+    - name: set version 
+      run: poetry version $(git describe --tags --abbrev=0)
 
     - name: Build
       run: poetry build
