@@ -19,6 +19,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+            fetch-depth: 0 # https://github.com/mtkennerly/poetry-dynamic-versioning/issues/27
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
