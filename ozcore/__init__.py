@@ -1,5 +1,5 @@
 """ version of the package OzCore. """
 
-from ._version import get_versions
-__version__ = get_versions()['version']
-del get_versions
+from dunamai import Version, Style
+__version__ = Version.from_any_vcs().serialize(style=Style.SemVer)
+del Version, Style
