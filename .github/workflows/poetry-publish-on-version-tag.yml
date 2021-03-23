@@ -43,9 +43,5 @@ jobs:
         python -m poetry run python -m pytest -v tests
 
     - name: Publish
-      env:
-        PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
       run: |
-        poetry config pypi-token.pypi $PYPI_TOKEN
-        python -m poetry build
-        python -m poetry publish
+        python -m poetry publish -n --build --username __token__ --password ${{ secrets.pypi_password }}
