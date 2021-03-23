@@ -37,9 +37,6 @@ jobs:
     - name: set config
       run: poetry config virtualenvs.create true
 
-    - name: shell
-      run: poetry shell
-
     - name: Install dependencies
       run: poetry install
 
