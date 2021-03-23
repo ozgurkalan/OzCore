@@ -41,7 +41,7 @@ jobs:
       run: poetry install
 
     - name: version
-      run: poter version 1.5.5
+      run: poetry version 1.5.5
 
     - name: Build
       run: poetry build
