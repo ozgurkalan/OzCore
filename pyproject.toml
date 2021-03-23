@@ -61,6 +61,7 @@ poetry-dynamic-versioning = "^0.12.4"
 
 [tool.poetry.extras]
 test = ["pytest"]
+docs = ["toml"]
 
 [tool.poetry-dynamic-versioning]
 enable = true
