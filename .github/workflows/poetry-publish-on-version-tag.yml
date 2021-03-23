@@ -34,6 +34,12 @@ jobs:
         python -m pip install poetry==${{ matrix.poetry-version }}
 
 
+    - name: set config
+      run: poetry config poetry config virtualenvs.create true
+
+    - name: shell
+      run: poetry shell
+      
     - name: Install dependencies
       run: poetry install
 
