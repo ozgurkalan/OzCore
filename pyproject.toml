@@ -4,6 +4,7 @@ version = "0.1.0" # will be overwritten by setup.cfg & versioneer
 description = "My core."
 authors = ["Ozgur Kalan <ozgurkalan@gmail.com>"]
 readme = "README.rst"
+repository = "https://github.com/ozgurkalan/OzCore"
 
 [tool.poetry.dependencies]
 python = "^3.8"
