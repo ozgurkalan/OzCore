@@ -41,3 +41,10 @@ jobs:
     - name: Test with pytest
       run: |
         python -m poetry run python -m pytest -v tests
+
+    - name: Publish
+      env:
+        PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+      run: |
+        poetry config pypi-token.pypi $PYPI_TOKEN
+        python -m poetry install
