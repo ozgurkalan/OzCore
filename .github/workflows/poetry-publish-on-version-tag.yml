@@ -44,4 +44,5 @@ jobs:
 
     - name: Publish
       run: |
-        python -m poetry publish -n --build --username __token__ --password ${{ secrets.pypi_password }}
+        python -m poetry build
+        python -m poetry publish --username __token__ --password ${{ secrets.pypi_password }}
