@@ -1,9 +1,8 @@
 from setuptools import setup, find_packages
-import versioneer
+from dunamai import Version, Style
 
 setup(
    
-   version=versioneer.get_version(),
-   cmdclass=versioneer.get_cmdclass(),
+   version=Version.from_any_vcs().serialize(style=Style.SemVer),
    packages = find_packages(exclude=["docs", "tests"]),  
 )

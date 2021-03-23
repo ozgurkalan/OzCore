@@ -1799,14 +1799,6 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 brotli = ["brotlipy (>=0.6.0)"]
 
 [[package]]
-name = "versioneer"
-version = "0.19"
-description = "Easy VCS-based management of project version strings"
-category = "dev"
-optional = false
-python-versions = ">=3.6"
-
-[[package]]
 name = "virtualenv"
 version = "20.4.3"
 description = "Virtual Python Environment builder"
@@ -1877,12 +1869,13 @@ python-versions = "*"
 notebook = ">=4.4.1"
 
 [extras]
+docs = []
 test = []
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "10a3ceb79e598473a0eb4176b52e5110b601d84b616c1211dac402a8faf42244"
+content-hash = "51d1d13661562859ca37f7113ac7a20490f0307c1e148ac8039f25f215b8f253"
 
 [metadata.files]
 alabaster = [
@@ -3110,10 +3103,6 @@ typing-extensions = [
 urllib3 = [
     {file = "urllib3-1.26.4-py2.py3-none-any.whl", hash = "sha256:2f4da4594db7e1e110a944bb1b551fdf4e6c136ad42e4234131391e21eb5b0df"},
     {file = "urllib3-1.26.4.tar.gz", hash = "sha256:e7b021f7241115872f92f43c6508082facffbd1c048e3c6e2bb9c2a157e28937"},
-]
-versioneer = [
-    {file = "versioneer-0.19-py3-none-any.whl", hash = "sha256:691e0ded8da37494f27197ccc1fb8a0bba370632dba820c09c240bc410161435"},
-    {file = "versioneer-0.19.tar.gz", hash = "sha256:a4fed39bbebcbd2d07f8a86084773f303cb442709491955a0e6754858e47afae"},
 ]
 virtualenv = [
     {file = "virtualenv-20.4.3-py2.py3-none-any.whl", hash = "sha256:83f95875d382c7abafe06bd2a4cdd1b363e1bb77e02f155ebe8ac082a916b37c"},
