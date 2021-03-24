@@ -4,9 +4,25 @@ OzCore
 
 OzCore is my core.
 
+
+.. image:: https://badge.fury.io/py/ozcore.svg
+    :target: https://pypi.python.org/pypi/ozcore/
+    :alt: PyPI version
+
+
 .. image:: https://readthedocs.org/projects/ozcore/badge/?version=latest
     :target: https://ozcore.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
+
+
+.. image:: http://hits.dwyl.com/ozgurkalan/OzCore.svg
+    :target: http://hits.dwyl.com/ozgurkalan/OzCore
+    :alt: HitCount
+
+
+
+
+
 
 It is automating my boring stuff. A time saver for me. I can access frequently used modules and methods easliy. Most of my time is passing with Jupyter Notebooks, and OzCore is my best friend. 
 
