@@ -1,10 +1,14 @@
+v1.1.8
+~~~~~~
+Reduce number of modules. Fit to ReadTheDocs requirements and include a requirements.txt derived from poetry.
+
 v1.1.7
 ~~~~~~
-rearrange and fix docs
+Rearrange and fix docs
 
 v1.1.6
 ~~~~~~
-a stable version after experimenting PyPi automation with Github actions.
+A stable version after experimenting PyPi automation with Github actions.
 
 v1.0.1
 ~~~~~~
