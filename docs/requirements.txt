@@ -3,6 +3,7 @@ pandas
 matplotlib
 ipykernel
 nbformat
+jupyter_contrib_nbextensions
 qgrid
 ipyaggrid
 typeguard

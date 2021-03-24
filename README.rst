@@ -170,5 +170,15 @@ Fresh installs may have problems with enabling extentions. You shall run the com
     jupyter nbextension enable --py --sys-prefix widgetsnbextension
 
 
+Jupyter Extensions
+==================
+
+This step copies the ``nbextensions`` javascript and css files into the jupyter server’s search directory, and edits some jupyter config files. 
+
+.. code:: bash
+
+    jupyter contrib nbextension install --user
+
+
 
 
