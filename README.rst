@@ -4,6 +4,10 @@ OzCore
 
 OzCore is my core.
 
+.. image:: https://readthedocs.org/projects/ozcore/badge/?version=latest
+:target: https://ozcore.readthedocs.io/en/latest/?badge=latest
+:alt: Documentation Status
+
 It is automating my boring stuff. A time saver for me. I can access frequently used modules and methods easliy. Most of my time is passing with Jupyter Notebooks, and OzCore is my best friend. 
 
 Many code snippets derive from a hard processes. I search for the best fitting options and try them sometimes for hours or days. OzCore keeps my good practices as side notes. My quality time for coding is mostly passing with annoying dev-environment, re-setups and glitches. OzCore skips the hard process and provides me with a fresh working environment, where All necessary packages installed.
