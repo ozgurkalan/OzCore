@@ -63,7 +63,7 @@ recommonmark = "^0.7.1"
 
 [tool.poetry.extras]
 test = ["pytest"]
-
+docs = ["Sphinx", "sphinx-autobuild", "sphinx-rtd-theme", "sphinxcontrib-napoleon", "myst-parser", "rstcheck", "recommonmark"]
 
 [tool.poetry-dynamic-versioning]
 enable = true
