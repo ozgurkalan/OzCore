@@ -8,10 +8,4 @@ formats: all
 python:
   version: 3.8
   install:
-    - method: pip
-      path: .
-      extra_requirements:
-        - docs
-
-submodules:
-  include: all
+  - requirements: docs/docs-requirements.txt

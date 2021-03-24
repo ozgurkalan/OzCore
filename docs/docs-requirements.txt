@@ -1,0 +1,7 @@
+Sphinx
+sphinx-autobuild
+sphinx-rtd-theme
+sphinxcontrib-napoleon
+myst-parser
+rstcheck
+recommonmark
