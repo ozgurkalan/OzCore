@@ -1,133 +1,130 @@
-alabaster==0.7.12; python_version >= "3.6"
-alembic==1.5.7; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.6.0")
-appdirs==1.4.4; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
-appnope==0.1.2; platform_system == "Darwin" and python_version >= "3.7" and sys_platform == "darwin"
-argon2-cffi==20.1.0; python_version >= "3.6"
-async-generator==1.10; python_full_version >= "3.6.1" and python_version >= "3.6"
-atomicwrites==1.4.0; python_version >= "3.5" and python_full_version < "3.0.0" and sys_platform == "win32" and (python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.5") or sys_platform == "win32" and python_version >= "3.5" and python_full_version >= "3.4.0" and (python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.5")
-attrs==20.3.0; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "4.0" or python_full_version >= "3.5.0" and python_version >= "3.6" and python_version < "4.0"
-babel==2.9.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
-backcall==0.2.0; python_version >= "3.7"
-black==20.8b1; python_version >= "3.6"
-bleach==3.3.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
-certifi==2020.12.5; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.5"
-cffi==1.14.5; implementation_name == "pypy" and python_version >= "3.6"
-chardet==4.0.0; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.5"
-click==7.1.2; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
-colorama==0.4.4; python_version >= "3.7" and python_full_version < "3.0.0" and sys_platform == "win32" and platform_system == "Windows" and (python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.5") or sys_platform == "win32" and python_version >= "3.7" and python_full_version >= "3.5.0" and platform_system == "Windows" and (python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.5")
-commonmark==0.9.1
-coverage==5.5; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version < "4"
-cycler==0.10.0; python_version >= "3.6"
-decorator==4.4.2; python_version >= "3.7" and python_full_version < "3.0.0" or python_full_version >= "3.2.0" and python_version >= "3.7"
-defusedxml==0.7.1; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
-distlib==0.3.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-docutils==0.16; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
-docxcompose==1.3.1
-dunamai==1.5.4; python_version >= "3.5" and python_version < "4.0"
-emoji==1.2.0
-entrypoints==0.3; python_version >= "3.6"
-faker==6.6.2; python_version >= "3.6"
-filelock==3.0.12; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-google-trans-new==1.1.9
-greenlet==1.0.0; python_version >= "3" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version >= "3"
-html2text==2020.1.16; python_version >= "3.5"
-html5lib==1.1; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
-idna==2.10; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.5"
-imagesize==1.2.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
-ipyaggrid==0.2.1
-ipykernel==5.5.0; python_version >= "3.5"
-ipython-genutils==0.2.0; python_version >= "3.7"
-ipython==7.21.0; python_version >= "3.7"
-ipywidgets==7.6.3
-jedi==0.18.0; python_version >= "3.7"
-jinja2==2.11.3; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "4.0" or python_version >= "3.6" and python_version < "4.0" and python_full_version >= "3.5.0"
-jsonschema==3.2.0; python_version >= "3.5"
-jupyter-client==6.1.12; python_full_version >= "3.6.1" and python_version >= "3.6"
-jupyter-core==4.7.1; python_version >= "3.6"
-jupyterlab-pygments==0.1.2; python_version >= "3.6"
-jupyterlab-widgets==1.0.0; python_version >= "3.6"
-kiwisolver==1.3.1; python_version >= "3.6"
-livereload==2.6.3; python_version >= "3.6"
-lxml==4.6.3; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
-mako==1.1.4; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0"
-markdown-it-py==0.6.2; python_version >= "3.6" and python_version < "4.0"
-markdown2==2.4.0; python_version >= "3.5" and python_version < "4"
-markupsafe==1.1.1; python_version >= "3.5" and python_full_version < "3.0.0" and python_version < "4.0" or python_version >= "3.5" and python_version < "4.0" and python_full_version >= "3.6.0"
-matplotlib==3.3.4; python_version >= "3.6"
-mdit-py-plugins==0.2.6; python_version >= "3.6" and python_version < "4.0"
-mistune==0.8.4; python_version >= "3.6"
-more-itertools==8.7.0; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.5"
-mypy-extensions==0.4.3; python_version >= "3.6"
-myst-parser==0.13.5; python_version >= "3.6"
-nbclient==0.5.3; python_full_version >= "3.6.1" and python_version >= "3.6"
-nbconvert==6.0.7; python_version >= "3.6"
-nbformat==5.1.2; python_version >= "3.5"
-nest-asyncio==1.5.1; python_full_version >= "3.6.1" and python_version >= "3.6"
-notebook==6.3.0; python_version >= "3.6"
-numpy==1.20.1; python_version >= "3.7"
-packaging==20.9; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
-pandas==1.2.3; python_full_version >= "3.7.1"
-pandocfilters==1.4.3; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
-parso==0.8.1; python_version >= "3.7"
-pathspec==0.8.1; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
-pexpect==4.8.0; sys_platform != "win32" and python_version >= "3.7"
-pickleshare==0.7.5; python_version >= "3.7"
-pillow==8.1.2; python_version >= "3.6"
-pluggy==0.13.1; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.5"
-pockets==0.9.1
-poetry-dynamic-versioning==0.12.4; python_version >= "3.5" and python_version < "4.0"
-prometheus-client==0.9.0; python_version >= "3.6"
-prompt-toolkit==3.0.18; python_full_version >= "3.6.1" and python_version >= "3.7"
-ptyprocess==0.7.0; sys_platform != "win32" and python_version >= "3.7" and os_name != "nt"
-py==1.10.0; python_version >= "3.6" and python_full_version < "3.0.0" and implementation_name == "pypy" or python_full_version >= "3.5.0" and python_version >= "3.6" and implementation_name == "pypy"
-pycparser==2.20; python_version >= "3.6" and python_full_version < "3.0.0" and implementation_name == "pypy" or implementation_name == "pypy" and python_version >= "3.6" and python_full_version >= "3.4.0"
-pygments==2.8.1; python_version >= "3.7"
-pyparsing==2.4.7; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
-pyrsistent==0.17.3; python_version >= "3.5"
-pytest-cov==2.11.1; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
-pytest-remotedata==0.3.2; python_version >= "2.7"
-pytest==5.4.3; python_version >= "3.5"
-python-dateutil==2.8.1; python_full_version >= "3.7.1" and python_version >= "3.6" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0") and (python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.6") and (python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.5")
-python-docx==0.8.10
-python-editor==1.0.4; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0"
-pytz==2021.1; python_full_version >= "3.7.1" and python_version >= "3.5"
-pywin32==300; sys_platform == "win32" and python_version >= "3.6"
-pywinpty==0.5.7; os_name == "nt" and python_version >= "3.6"
-pyyaml==5.4.1; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version >= "3.6"
-pyzmq==22.0.3; python_version >= "3.6"
-qgrid==1.3.1
-recommonmark==0.7.1
-regex==2021.3.17; python_version >= "3.6"
-requests==2.25.1; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
-rstcheck==3.3.1
-send2trash==1.5.0; python_version >= "3.6"
-simplejson==3.17.2; python_version >= "2.5" and python_full_version < "3.0.0" or python_full_version >= "3.3.0"
-six==1.15.0; python_full_version >= "3.7.1" and python_version >= "2.7" and (python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.6") and (python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.5") and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0") and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.3.0") and (python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6")
-snowballstemmer==2.1.0; python_version >= "3.6"
-sphinx-autobuild==2021.3.14; python_version >= "3.6"
-sphinx-rtd-theme==0.5.1
-sphinx==3.5.3; python_version >= "3.5"
-sphinxcontrib-applehelp==1.0.2; python_version >= "3.6"
-sphinxcontrib-devhelp==1.0.2; python_version >= "3.6"
-sphinxcontrib-htmlhelp==1.0.3; python_version >= "3.6"
-sphinxcontrib-jsmath==1.0.1; python_version >= "3.6"
-sphinxcontrib-napoleon==0.7
-sphinxcontrib-qthelp==1.0.3; python_version >= "3.6"
-sphinxcontrib-serializinghtml==1.1.4; python_version >= "3.6"
-sqlalchemy==1.4.2; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.6.0")
-terminado==0.9.3; python_version >= "3.6"
-testpath==0.4.4; python_version >= "3.6"
-text-unidecode==1.3; python_version >= "3.6"
-toml==0.10.2; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
-tomlkit==0.7.0; python_version >= "3.5" and python_full_version < "3.0.0" and python_version < "4.0" or python_version >= "3.5" and python_version < "4.0" and python_full_version >= "3.5.0"
-tornado==6.1; python_version >= "3.6"
-tox==3.23.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
-traitlets==5.0.5; python_full_version >= "3.6.1" and python_version >= "3.7"
-typed-ast==1.4.2; python_version >= "3.6"
-typeguard==2.11.1; python_full_version >= "3.5.3"
-typing-extensions==3.7.4.3; python_version >= "3.6"
-urllib3==1.26.4; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version < "4" and python_version >= "3.5"
-virtualenv==20.4.3; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-wcwidth==0.2.5; python_full_version >= "3.6.1" and python_version >= "3.7"
-webencodings==0.5.1; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
-widgetsnbextension==3.5.1
+alabaster @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/01/50/a4/e8f66b1cc7b3896e348a7976ec6390f61a7ed3cc0583b406c9a737955a/alabaster-0.7.12-py2.py3-none-any.whl
+alembic @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/ca/27/6d/f376cf2ff89ab2b223d729a918d5be7e9295e5f989e72fc31222ffe013/alembic-1.5.7-py2.py3-none-any.whl
+appdirs @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/68/c7/33/ef0f6af8d1aa906f1a5641762fe5d6f47d565c5a4b3482f1c6fb0f5f20/appdirs-1.4.4-py2.py3-none-any.whl
+appnope @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/db/10/31/24b2c5bc1fc158d51095265fd31ede89b3ac384a8a2307ffc7ec8d87bb/appnope-0.1.2-py2.py3-none-any.whl
+argon2-cffi @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/eb/24/17/c70b29863cf49b789d8130e1aa090887c5ff1c5e691618a11eb5111dfa/argon2_cffi-20.1.0-cp37-abi3-macosx_10_6_intel.whl
+async-generator @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/60/d6/35/e25389ca9cdf584a7a41be4eab45a490150210296ca82c7eb696a7e21b/async_generator-1.10-py3-none-any.whl
+attrs @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/b7/28/6f/acdd2c0e759f1cda97abf00db7723a0ffb3a151696d8d96398aea16171/attrs-20.3.0-py2.py3-none-any.whl
+Babel @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/e3/ab/8c/e6b588d52a460a9eca8f0b62cffeb18d90d8631d8b5c7e180c56b123f8/Babel-2.9.0-py2.py3-none-any.whl
+backcall @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/62/2c/f2/bf9c43ca0bcfca41150901227b0d023dc854851b710f82a72f5beaa09b/backcall-0.2.0-py2.py3-none-any.whl
+black @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/38/f4/61/550fd050005dc1c64850374a7f98dd941a4633d72e87f147bebf26bdc3/black-20.8b1.tar.gz
+bleach @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/03/c4/86/6b724fd4941eb6dc691b41bd051edfcef5f751fd330f8dfdded6148c22/bleach-3.3.0-py2.py3-none-any.whl
+certifi @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/a5/b1/71/0fb759c6550e4dc0a538f0fc47cdf7dcd23bae70385241ee92b4d5b87c/certifi-2020.12.5-py2.py3-none-any.whl
+cffi @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/63/44/9d/9298aeaf3f0d72f8df8f74d59c961fca992791828d7bd3d87d206414f1/cffi-1.14.5-cp38-cp38-macosx_10_9_x86_64.whl
+chardet @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/47/b7/82/19c2b887f87f3adbaf4e34c55189388e5132c78f6929d7001a78b0209b/chardet-4.0.0-py2.py3-none-any.whl
+click @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/30/bc/bf/e00ffd8f0edf0294942e70e80e42a839bd2649d2c5b864e6389e526d2a/click-7.1.2-py2.py3-none-any.whl
+colorama @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/b0/f3/a3/cf94f06cbe1d286a25116cfe54d5a75cb1c4b54d15b2b1b4fc03a7f657/colorama-0.4.4-py2.py3-none-any.whl
+commonmark @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/1d/c9/97/39ef183295147a567d1ecb406e680f72da6e84e32284c64f59fb21094e/commonmark-0.9.1-py2.py3-none-any.whl
+coverage @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/d3/f4/ca/6004804564ead51cc8b073d378fe3771c9d06bfe64e1e0e243517f74e6/coverage-5.5-cp38-cp38-macosx_10_9_x86_64.whl
+cycler @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/d7/14/aa/ff6e41cb4937cf2f4250bf871903aa12ae9d22e21f859aece73c8808e3/cycler-0.10.0-py2.py3-none-any.whl
+decorator @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/e8/56/46/038f0f95c2eb2a2792092491cba740226306e663708d5062754d1cb91f/decorator-4.4.2-py2.py3-none-any.whl
+defusedxml @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/15/b0/94/888992ee7b1de9fbc975b6afd17d34f441df6e96172df8d4eba95c9432/defusedxml-0.7.1-py2.py3-none-any.whl
+distlib @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/05/ef/a8/cc6b58b48105b14323bce7de07ff1c0c4add12d6f53f688a46288bd686/distlib-0.3.1-py2.py3-none-any.whl
+docutils @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/9e/78/f1/81f20d21f3ed304c86fa5394fadbb173e75ad363029a8fefa635dadf2e/docutils-0.16-py2.py3-none-any.whl
+docxcompose @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/e5/72/11/205a54dd6cbab8d096bbabf47b2899e1d8960361025c73e49566aa0eb9/docxcompose-1.3.1.tar.gz
+dunamai @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/1a/3f/09/f8cd71feabbce53c77840c9408aacb3b929f8cc6713ccb5360a5ca12bb/dunamai-1.5.4-py3-none-any.whl
+emoji @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/06/0e/62/0c750bb0f655aee226b263b666f34b8c77b1caddc74a09e74d4fe97726/emoji-1.2.0-py3-none-any.whl
+entrypoints @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/27/67/42/5ca7438658f76c8700ff6c44ea1cf9dc128cf0862adb7de53d3a35266c/entrypoints-0.3-py2.py3-none-any.whl
+Faker @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/a2/ee/52/b882b34e12f7de4bb4eb68917d8e7a554918d46604a2f0840c9249eb23/Faker-6.6.2-py3-none-any.whl
+filelock @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/f4/78/c1/69555c3867649a2a5dac43f12a078830700480a49be273fb2de82be2ab/filelock-3.0.12-py3-none-any.whl
+google-trans-new @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/8b/ce/fb/b3490272aa6375da8f04bb9cc7cec9214ba3ae4803eb79a5bbed68ea16/google_trans_new-1.1.9-py3-none-any.whl
+greenlet @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/73/f9/ad/78f15271f67cfb74f5c797abf520487e0bc91888a43fb25e306668a166/greenlet-1.0.0-cp38-cp38-macosx_10_14_x86_64.whl
+html2text @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/3a/a7/37/cd2178c7695c8b988caa4e30c9bec6e9a9c825b6fca99ddd2796298456/html2text-2020.1.16-py3-none-any.whl
+html5lib @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/3a/69/75/c20902b2e250d6aa35ef06815dd1cc66f7d2bc20b64941f5f116507d8d/html5lib-1.1-py2.py3-none-any.whl
+idna @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/9e/f9/03/6066b92d35486e7f0d4f310126e3c60a6619726e43ef98e32e105b5c52/idna-2.10-py2.py3-none-any.whl
+imagesize @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/0b/69/4e/8e64ed37efc2f5438fce870c94736b2e1a21bc4cb0c286f936de14357b/imagesize-1.2.0-py2.py3-none-any.whl
+ipyaggrid @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/5f/12/96/fc885cee7bcbd00c5607ca1115a6aa3f516dd7e5eaebbc7321ab47c132/ipyaggrid-0.2.1-py2.py3-none-any.whl
+ipykernel @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/18/8b/70/472bd42e662e9dd3bb8c14f1e4c7aafbfb090a58ad541f0ead3a958cb4/ipykernel-5.5.0-py3-none-any.whl
+ipython @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/1a/68/b9/1cab2debf15ff5e729ed700b4745a0cbd49a73956d4c0199b607acc7ec/ipython-7.21.0-py3-none-any.whl
+ipython-genutils @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/e6/8e/a3/8f37e14310c0072b3fcc4240490bcb42630aa695d069aee89953ebd9f8/ipython_genutils-0.2.0-py2.py3-none-any.whl
+ipywidgets @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/9e/60/06/3c8baa28b9c599236a810c64f38155a30bce229240ba64138d28e72a12/ipywidgets-7.6.3-py2.py3-none-any.whl
+jedi @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/42/26/07/496d2180e241dbf58cf832e0c7a617d8fcbdd6f3f93937056d106545fc/jedi-0.18.0-py2.py3-none-any.whl
+Jinja2 @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/1e/19/63/9b4675e143abad59de60e0e667815fd5e19dd0b28fc2815f9f957726d3/Jinja2-2.11.3-py2.py3-none-any.whl
+jsonschema @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/8a/0f/f1/4a51263f4c7019004d5abd49f41d94c0eb4618233008d82a629134c337/jsonschema-3.2.0-py2.py3-none-any.whl
+jupyter-client @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/ed/63/0c/5e8cf595564eec355de9276b08564ecf623ce47cedfafb5a3d1bfc7fb0/jupyter_client-6.1.12-py3-none-any.whl
+jupyter-core @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/07/55/c4/ee3e77bec69dd940d44470676d43b7922aaca3c58d5a03fb779a70d5a8/jupyter_core-4.7.1-py3-none-any.whl
+jupyterlab-pygments @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/c8/b0/10/ad75ecf240424057a12f5b4320da2c9f380541cdf830a39e7e8437c2c0/jupyterlab_pygments-0.1.2-py2.py3-none-any.whl
+jupyterlab-widgets @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/d9/1d/4c/f2ccbffd2367bfd6f8b6f8674c9c2fc2c3a2c15472525bc9f9148fcdca/jupyterlab_widgets-1.0.0-py3-none-any.whl
+kiwisolver @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/88/ad/c3/0a6b45ba6943136d3a211e47283aaea50828b4d0bf81bed7e520ae6606/kiwisolver-1.3.1-cp38-cp38-macosx_10_9_x86_64.whl
+livereload @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/f2/fa/54/ce4b2b00e6ca8a419719ea50fa656bc499aac2136451264cc2fb41c9db/livereload-2.6.3.tar.gz
+lxml @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/b0/c3/1f/bde91e88c462e522b16a3b38fab74d4d32aea11d19262a02ea3cbdadd5/lxml-4.6.3-cp38-cp38-macosx_10_9_x86_64.whl
+Mako @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/2b/e8/50/1d2ac0c7a28dfc4ef81a559bcb6d5dba8682c0d28edfdd91917d23a199/Mako-1.1.4-py2.py3-none-any.whl
+markdown-it-py @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/6c/a3/f2/da8d31346ccd5ba7cb36da77dddfd7251cc38bc1b82c6b6969245095c1/markdown_it_py-0.6.2-py3-none-any.whl
+markdown2 @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/36/43/43/2cfe9a3e43caace5567e8b33f8b4738e391bf50b14cabb9c85ec7ad469/markdown2-2.4.0-py2.py3-none-any.whl
+MarkupSafe @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/c6/f0/df/47b8e78a3e4aa51bccefa7a95dc021176d8911e65b89b9ee8fbf3c601e/MarkupSafe-1.1.1-cp38-cp38-macosx_10_9_x86_64.whl
+matplotlib @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/e2/7b/21/6373ea95c50a8ee88e75d1e79f9ad2586ce0a5bed48b88ff47c16e53cc/matplotlib-3.3.4-cp38-cp38-macosx_10_9_x86_64.whl
+mdit-py-plugins @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/be/b4/51/406ebba147b0f53ee4988adde67d781cd9f3698b01d2593a697f44fdf3/mdit_py_plugins-0.2.6-py3-none-any.whl
+mistune @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/d9/d8/5c/8eac14aaa95c3aa81409d56b7423ff6dd88eb398f551c1bf0b8c05b916/mistune-0.8.4-py2.py3-none-any.whl
+more-itertools @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/e5/3f/ef/7962cb207c9c377a5e2858c39136056c76582b87e3716935561bdcae94/more_itertools-8.7.0-py3-none-any.whl
+mypy-extensions @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/b6/a0/b0/a5dc9acd6fd12aba308634f21bb7cf0571448f20848797d7ecb327aa12/mypy_extensions-0.4.3-py2.py3-none-any.whl
+myst-parser @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/37/63/7d/9d6beedeb1caef6c3aede464d9a9eefa6c8f2033dd21b89573b4810b2a/myst_parser-0.13.5-py3-none-any.whl
+nbclient @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/e6/d5/7e/4b8674111f724454f15ddd76b59b251935c93cf865c6e23003a28a2d65/nbclient-0.5.3-py3-none-any.whl
+nbconvert @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/6d/04/d2/6f698739d85cec6503abcfed57a421b113f6f66af399a25bf9994a1a87/nbconvert-6.0.7-py3-none-any.whl
+nbformat @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/ef/d0/08/2cbfc9a5271fecac60296b690ec71df30e1a74edd3ff54c3caaffa35fe/nbformat-5.1.2-py3-none-any.whl
+nest-asyncio @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/f5/d1/32/8bc78b4ee2a2d3a377491872fe5aa705448a863af0bb0968676a0e2d3b/nest_asyncio-1.5.1-py3-none-any.whl
+notebook @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/8b/15/b3/5c85dc03d7f959035c027781fe0216698f814feb82c5f9526788de9215/notebook-6.3.0-py3-none-any.whl
+numpy @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/b9/d7/76/e598dafe35eb59578dfbb5706132ceb335b69b2ef52788d007dc094253/numpy-1.20.1-cp38-cp38-macosx_10_9_x86_64.whl
+packaging @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/69/b5/74/4884010222ec7d09be9bd10d71316b7c49153ef24103605e4a2650af7c/packaging-20.9-py2.py3-none-any.whl
+pandas @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/f5/a5/cd/127c0e8d5f327c9838bdd8e681db1ca8749089be1b726fddef9742199b/pandas-1.2.3-cp38-cp38-macosx_10_9_x86_64.whl
+pandocfilters @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/a0/de/ee/57ddb36e87aac56bbe9fe7c7bee8049805d79bcc280239a9fc1e913a69/pandocfilters-1.4.3.tar.gz
+parso @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/fe/ac/61/368c9383d3833586c1d666ec86359b6511fa79adb884e5f3ac5fd47a90/parso-0.8.1-py2.py3-none-any.whl
+pathspec @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/5d/98/c8/c7cd4decd7943aa5647824d8553b40e86f4e2ef814ca2a4e73ee708f7f/pathspec-0.8.1-py2.py3-none-any.whl
+pexpect @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/c0/05/08/f23ddb8e3d5b19e7cf01eb434220310be2aaf69226bdec78bc53589024/pexpect-4.8.0-py2.py3-none-any.whl
+pickleshare @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/27/b2/0a/93a92c700a1993b2923519262ddf76a629bd459a0597c0ae28bf80c7a6/pickleshare-0.7.5-py2.py3-none-any.whl
+Pillow @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/d4/5f/cd/0f5abedea34b9324409e909972f502fca1e0e12023b175f38eab8881a8/Pillow-8.1.2-cp38-cp38-macosx_10_10_x86_64.whl
+pluggy @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/9c/e5/0b/2d64d03361a081edeb5d2ec5f286ccf9719587781fbf6822e1b6384c27/pluggy-0.13.1-py2.py3-none-any.whl
+pockets @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/ee/cb/a8/668363634a01d7bb6b9afd6dbf252921eab919bc465eb2b8a17d964676/pockets-0.9.1-py2.py3-none-any.whl
+poetry-dynamic-versioning @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/ab/92/c3/37ad41de830c5291dbcb9cac9aeaf314d58eecff7fd7f6e95ce46fc582/poetry_dynamic_versioning-0.12.4-py3-none-any.whl
+prometheus-client @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/69/94/b3/926903ae24487f948be927c737b37ead3a9e0865b5ec0d3007cc4fa89f/prometheus_client-0.9.0-py2.py3-none-any.whl
+prompt-toolkit @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/b9/d1/38/231fc80979af8084d0746ac9e5bcaceb6ae7412ed7c1c1c537659d117f/prompt_toolkit-3.0.18-py3-none-any.whl
+ptyprocess @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/b5/84/64/9519e6926ac101cbc8d93423b8165f4abac4f8a8e3e099f74d3c7e0e67/ptyprocess-0.7.0-py2.py3-none-any.whl
+py @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/6b/b2/2b/e6686e7d0183dbd36bd66921efa3e77ce26260a3671524cd86614290e0/py-1.10.0-py2.py3-none-any.whl
+pycparser @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/f1/03/25/40eb46f7bede64f78ba073e2141b8216e611cbcde72e3117c326560101/pycparser-2.20-py2.py3-none-any.whl
+Pygments @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/5c/f1/32/290ecc98cb0128481ae2a7fcc324222b493bcd6696fb26405c70eda87c/Pygments-2.8.1-py3-none-any.whl
+pyparsing @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/da/e7/3d/1780282f558e5fd157bf708b28b8ba0d08323ef6bc5b6396139ce38a0b/pyparsing-2.4.7-py2.py3-none-any.whl
+pyrsistent @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/d8/37/43/5ceed6677fc301784b0e62604a431e293d12c402f4ca588304e916a04d/pyrsistent-0.17.3.tar.gz
+pytest @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/9d/40/6b/50d2cb06df545acea43c65379c5456f4fbc703115a703bc7cd433ddf70/pytest-5.4.3-py3-none-any.whl
+pytest-cov @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/e8/ed/6e/eac235440db34634156d9b3964828f68d21a7a936edfeed08da39c8ba4/pytest_cov-2.11.1-py2.py3-none-any.whl
+pytest-remotedata @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/ed/1f/13/656c03b24007152bf06f3ec0a54842a4ca68e9b209b911c4203dd5392d/pytest_remotedata-0.3.2-py2.py3-none-any.whl
+python-dateutil @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/1e/2c/dc/0e811c2299b40168ee1da03bc13c11762ce9fa96eb867ad22280db11fc/python_dateutil-2.8.1-py2.py3-none-any.whl
+python-docx @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/9b/d5/60/e5b88501f62af8dbbc9c9d95383b860db2fd3062b4685049e98b309cad/python-docx-0.8.10.tar.gz
+python-editor @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/88/e4/9a/6a3b58d3811aabb356fe1af49b223e67e18505daf666e0dca62c12f260/python_editor-1.0.4-py3-none-any.whl
+pytz @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/19/50/c9/f8bffb0360052b3c85b912bc4172f824bc2571e24002806fb3a428302e/pytz-2021.1-py2.py3-none-any.whl
+PyYAML @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/99/c6/60/2baceb8eb743927ffda4f0184e9aea5339ca72c9a463509feeeb0d1668/PyYAML-5.4.1-cp38-cp38-macosx_10_9_x86_64.whl
+pyzmq @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/e0/6e/04/b43802931a5a96da640ef5dcfff5bb32d852bfdfbdcb7bc30741b34876/pyzmq-22.0.3-cp38-cp38-macosx_10_9_x86_64.whl
+qgrid @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/60/20/11/a2b8b33a2ab20c851b73b5a70d6a7d8bfc9ce6c52f4f802ad309598956/qgrid-1.3.1.tar.gz
+recommonmark @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/0e/4d/f1/40b81abbb882826a68b800399d1e18047863b22e093302285d47d66f78/recommonmark-0.7.1-py2.py3-none-any.whl
+regex @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/ab/6d/37/0b95bdfab094d5488b9500d7ccbf76c06b5c159186284fdb73535a866b/regex-2021.3.17-cp38-cp38-macosx_10_9_x86_64.whl
+requests @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/fe/f0/74/d691c7619cd645682c495ff78949b9c284e88d3f2ee85124df5cec5b0a/requests-2.25.1-py2.py3-none-any.whl
+rstcheck @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/3f/30/a6/c0e56781e58b2f8e6cb0ed7b0d3cf9a6095cf108a1ebe6c29eb29f98f9/rstcheck-3.3.1.tar.gz
+Send2Trash @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/40/97/0a/f421bca5e8da2c4a13d0c5abe9f2309550d5ebc2067b67c3929997663c/Send2Trash-1.5.0-py3-none-any.whl
+simplejson @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/d3/5a/3f/a574b7dd53f4b9f18a6de8b95e1dde66f9af3e7632114af529793913f2/simplejson-3.17.2-cp38-cp38-macosx_10_14_x86_64.whl
+six @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/be/98/c7/69fe6fea7a59659af1c6260899226129565330b1e07c9c5b3769be76bf/six-1.15.0-py2.py3-none-any.whl
+snowballstemmer @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/a6/21/11/58b79c57cfc922455998165c2ecc503603be058fe178af058936deaf1f/snowballstemmer-2.1.0-py2.py3-none-any.whl
+Sphinx @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/e5/b5/a6/d928e3d664c4b00d667352b9cc55c3e8eba0c6cb3af1eea5947e1afa3e/Sphinx-3.5.3-py3-none-any.whl
+sphinx-autobuild @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/fd/38/f4/9662891fbbef72c4aa8e88e6399956c605e00ae2726ce238bdd5b38987/sphinx_autobuild-2021.3.14-py3-none-any.whl
+sphinx-rtd-theme @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/24/c9/0a/b2af16e3543d6c13f9ec8bf3c7c564677ceaef98b897978dd8695b145a/sphinx_rtd_theme-0.5.1-py2.py3-none-any.whl
+sphinxcontrib-applehelp @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/06/55/7c/cf28d2c944f7fc7cba94678d0ca98b77947cae69b6c801ffd04601cc8c/sphinxcontrib_applehelp-1.0.2-py2.py3-none-any.whl
+sphinxcontrib-devhelp @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/95/e9/af/55ffd1a6f2b03f2bc460172ec6a9ee4a9353404fc6b9026b0fd4776f84/sphinxcontrib_devhelp-1.0.2-py2.py3-none-any.whl
+sphinxcontrib-htmlhelp @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/a0/ad/8e/a970be3040e06e0264ff5263c1c64053370852e5711ebce0169f50d4c0/sphinxcontrib_htmlhelp-1.0.3-py2.py3-none-any.whl
+sphinxcontrib-jsmath @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/5f/c9/8c/2bf04b76e3b07f85857acb15a02dec77db17eb7069ef7e3e8200580fa0/sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl
+sphinxcontrib-napoleon @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/53/b0/fb/e6e2565ae6f570eebaa645c6d2d3f66388502310a2c7aa3ccf29bcf3c7/sphinxcontrib_napoleon-0.7-py2.py3-none-any.whl
+sphinxcontrib-qthelp @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/bd/a5/cb/8f6c168f27ca463b2c09d5dfbaabea32b6bb9ebff80556a11bc2b1152f/sphinxcontrib_qthelp-1.0.3-py2.py3-none-any.whl
+sphinxcontrib-serializinghtml @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/83/d2/78/3f17c9e1fa5ed17cb815a8d897bf2003c1197b16a36d4e9c6ffa0e8592/sphinxcontrib_serializinghtml-1.1.4-py2.py3-none-any.whl
+SQLAlchemy @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/b9/72/6a/dd34b3f7791563ddc581862075fe822396d70ee82be38d3bd1afd0cb36/SQLAlchemy-1.4.2-cp38-cp38-macosx_10_14_x86_64.whl
+terminado @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/c9/6a/be/8b180d866bbce7739dbf28133b0e76ce8e87042250ba5c18fc190b5d59/terminado-0.9.3-py3-none-any.whl
+testpath @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/71/31/06/e1366905608d747ada47997b3406776c1f88e2628e47674e40b9ae2b0b/testpath-0.4.4-py2.py3-none-any.whl
+text-unidecode @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/9b/cc/f2/c615087594418f3b86c03fb83c56a1d3b673e89924d4bd0cece68a7615/text_unidecode-1.3-py2.py3-none-any.whl
+toml @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/9f/8c/c3/7b4f6778d60f3c9fa11f8fd0e48243bbad25a04975e0a01006b6350594/toml-0.10.2-py2.py3-none-any.whl
+tomlkit @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/db/c3/df/baf014ce3b04caffe7ac34bde699f5be82c4acbaf43f49db1ce681a500/tomlkit-0.7.0-py2.py3-none-any.whl
+tornado @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/f8/e3/41/917f42a91e332f48e4150ee97f1c569a747bb58d2db08b1aa8a794fe06/tornado-6.1-cp38-cp38-macosx_10_9_x86_64.whl
+tox @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/8f/b4/29/6edcd912e7359b957118c9b05dd5593f9348fae008813c22ec02fa4056/tox-3.23.0-py2.py3-none-any.whl
+traitlets @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/8a/f4/fd/48c1725dcdd56393737bb0696379f91042dae8fbe51d06801caadfb12b/traitlets-5.0.5-py3-none-any.whl
+typed-ast @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/e5/b5/79/23ee82b09fc7da4721300ac1169f9245ef341c44d7abc2564330a69214/typed_ast-1.4.2-cp38-cp38-macosx_10_9_x86_64.whl
+typeguard @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/69/b1/79/15ed482237941c8e042147163b77b4971aaac72df5938195a532a1abb8/typeguard-2.11.1-py3-none-any.whl
+typing-extensions @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/ac/8f/3a/97dfae6ca13a6e156f19a5e8aa95fc250129d7e5e6cd0f7c76a1d45b4f/typing_extensions-3.7.4.3-py3-none-any.whl
+urllib3 @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/07/e4/ee/0871e5b17849295d410e39a10a8be74439d3dbf1f39a6dd1af25e32754/urllib3-1.26.4-py2.py3-none-any.whl
+virtualenv @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/71/e8/99/9b89a7807a7c4d0371995fb72b3014b5154c219efeafb8f33507391a07/virtualenv-20.4.3-py2.py3-none-any.whl
+wcwidth @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/36/68/e2/7232f431072d5e8aeec124120b9a1d095d45da10311d271fac10982473/wcwidth-0.2.5-py2.py3-none-any.whl
+webencodings @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/60/1e/b4/eff9915b6506bb01a5ad61dfae3fa4f0302be9e2ad45eaccc833925b95/webencodings-0.5.1-py2.py3-none-any.whl
+widgetsnbextension @ file:///Users/ozgurkalan/Library/Caches/pypoetry/artifacts/4f/c4/8c/95c9c932a9649e98240304b336a4c725419ee2fd517897c94b817722d6/widgetsnbextension-3.5.1-py2.py3-none-any.whl
