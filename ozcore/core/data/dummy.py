@@ -22,6 +22,9 @@ usage::
     
     core.dummy.df1
     #...returns another dataframe with faked with seed 99 having shape(5,4)
+    
+    core.dummy.fake.name_female()
+    # ... you also have access to Faker class
 
 """
 import pandas as pd
