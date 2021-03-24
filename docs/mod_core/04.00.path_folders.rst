@@ -2,8 +2,6 @@
 Path and Folder Methods
 =======================
 
-Helper methods for Posixpath and essential Folders.
 
-
-.. autoclass:: ozcore.core.path.folders.Folder
+.. automodule:: ozcore.core.path.folders
 	:members:

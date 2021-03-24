@@ -6,8 +6,16 @@
    :caption: Contents
    :maxdepth: 1
    :hidden:
-   
-   module_core
+   :glob:
+
+   mod_core/**
+
+.. toctree::
+   :caption: Dev Environment
+   :maxdepth: 1
+   :hidden:
+   :glob:
+
    dev_environment
 
 

@@ -2,9 +2,7 @@
 TMP Folders and Files
 =======================
 
-Helper class for Temporary Folders and Files
 
-
-.. autoclass:: ozcore.core.path.tmp_folders.TMP_Folder
+.. automodule:: ozcore.core.path.tmp_folders
 	:members:
 	:no-special-members:

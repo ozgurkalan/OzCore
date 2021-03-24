@@ -5,8 +5,8 @@ OzCore
 OzCore is my core.
 
 .. image:: https://readthedocs.org/projects/ozcore/badge/?version=latest
-:target: https://ozcore.readthedocs.io/en/latest/?badge=latest
-:alt: Documentation Status
+    :target: https://ozcore.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
 
 It is automating my boring stuff. A time saver for me. I can access frequently used modules and methods easliy. Most of my time is passing with Jupyter Notebooks, and OzCore is my best friend. 
 
@@ -42,12 +42,12 @@ Massive Dependencies
 
 Since OzCore is a collection of snippets using diverse packages, massive amount of dependencies will be downloaded.
 
-.. warning:: pyproject.toml
+.. warning::
 
     Please see dependencies in ``pyproject.toml`` before installing.
 
-MacOS rules
-~~~~~~~~~~~
+MacOS bound modules
+~~~~~~~~~~~~~~~~~~~
 
 Some of the helper modules and functions are directly referenced to MacOS environment. Espacially Windows users may not like it. And some references are pointing to options which may not be available in your system. Such as OneDrive folder or gDrive folder. I have tests to distinguish between users, nevertheless you should be aware of this.
 
@@ -69,7 +69,7 @@ I. Anaconda
 
 .. code:: bash
 
-    # new env needs ipython
+    # new env needs ipython, you may also clone an existing env
     conda create -n py383 python=3.8.3 ipython  
 
     conda activate py383
