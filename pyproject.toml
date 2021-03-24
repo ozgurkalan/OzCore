@@ -5,11 +5,13 @@ description = "My core."
 authors = ["Ozgur Kalan <ozgurkalan@gmail.com>"]
 readme = "README.rst"
 repository = "https://github.com/ozgurkalan/OzCore"
+homepage = "https://ozcore.readthedocs.io/"
 license = "GPL-3.0-or-later"
 classifiers =[
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 5 - Production/Stable",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    'Intended Audience :: Developers',
     "Programming Language :: Python :: 3.8",
-    "Operating System :: MacOS",
     "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
 ] 
 
