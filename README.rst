@@ -162,5 +162,13 @@ For your Jupyter Notebook to run in your dedicated environment, please use the f
     jupyter kernelspec uninstall <your_env_name>
 
 
+Fresh installs may have problems with enabling extentions. You shall run the commands below to activate.
+
+.. code:: bash
+
+    jupyter nbextension enable --py --sys-prefix qgrid
+    jupyter nbextension enable --py --sys-prefix widgetsnbextension
+
+
 
 
