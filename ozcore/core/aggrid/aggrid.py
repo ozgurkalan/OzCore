@@ -80,8 +80,6 @@ class Grid:
                 grid_options[arg] = kwargs[arg]
             elif arg in settings:
                 settings[arg] = kwargs[arg]
-            # TODO: aggrid
-            #   * groupby option
             elif arg == "groupby":
                 val = kwargs[arg]
                 if not isinstance(val, list):
