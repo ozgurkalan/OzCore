@@ -25,6 +25,10 @@ usage::
     
     core.dummy.fake.name_female()
     # ... you also have access to Faker class
+    
+    
+TODO:
+    New templates other than emp, e.g. np arrays shall be included
 
 """
 import pandas as pd
@@ -73,8 +77,6 @@ class Dummy:
         warning:
             Cannot assign 1 record only, if n<2 then n=2
             
-        TODO: dummy
-            * new templates other than emp, e.g. np arrays
         """
         df = self.df
         
