@@ -83,14 +83,20 @@ I would prefer to run on an Anaconda environment. Here you will find multiple ex
 I. Anaconda
 ~~~~~~~~~~~
 
+You may want to set the global Python version with Pyenv as ``pyenv global 3.8.3`` (of course if pyenv is available.)
+
 .. code:: bash
 
-    # new env needs ipython, you may also clone an existing env
-    conda create -n py383 python=3.8.3 ipython  
+    # create new env 
+    conda create -n py383
 
     conda activate py383
 
-    pip install ozcore
+    # this initiates every source bindings to new env
+    conda install pip
+
+    # install ozcore
+    conda install ozcore
 
 
 
