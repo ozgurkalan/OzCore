@@ -1,3 +1,8 @@
+v1.1.10
+~~~~~~~
+Include seaborn in dependencies which pulled scipy as dependecy. Corrected installation on a conda environment in README.
+
+
 v1.1.9
 ~~~~~~
 Include jupyter_contrib_nbextensions in dependencies. Update some of the docstrings. Include handcrafted requirements.txt in docs folder to meet ReadTheDocs build requirements.
