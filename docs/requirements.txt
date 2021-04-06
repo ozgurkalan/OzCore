@@ -1,9 +1,12 @@
+# These dependencies are derived from pyproject.toml
+# The file is prepared for Sphinx, which is grouchy about using it :(
+
+# Dependencies
 numpy
 pandas
 matplotlib
 ipykernel
 nbformat
-jupyter_contrib_nbextensions
 qgrid
 ipyaggrid
 typeguard
@@ -19,6 +22,11 @@ Faker
 google-trans-new
 python-docx
 docxcompose
+jupyter-contrib-nbextensions
+seaborn
+typer
+tqdm
+# Dev-Dependencies
 pytest
 pytest-cov
 pytest-remotedata
