@@ -14,6 +14,7 @@ from ozcore.core.helpers import (
     translate, # translate text with Google,
     dirme, # lists methods of a given module
     serialize_a_json_field, # validate and join nodes of json or dict
+    unzip, # download and unzip a zip file
 )
 
 
