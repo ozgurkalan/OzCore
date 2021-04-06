@@ -1,3 +1,10 @@
+v1.1.11
+~~~~~~~
+
+* Include unzip helper function
+* Add dependencies: pytest_httpserver, typer, tqdm
+* config and Makefile for pre-publish actions of the package
+
 v1.1.10
 ~~~~~~~
 Include seaborn in dependencies which pulled scipy as dependecy. Corrected installation on a conda environment in README.
