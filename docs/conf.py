@@ -13,7 +13,10 @@
 import os
 import sys
 import sphinx_rtd_theme
+
 sys.path.insert(0, os.path.abspath('..'))
+
+
 
 
 # -- Project information -----------------------------------------------------
@@ -23,7 +26,7 @@ copyright = '2021, OZinClouds'
 author = 'Ozgur Kalan'
 
 # The full version, including alpha/beta/rc tags
-release = '1.0'
+release = '1.2'
 
 
 # -- General configuration ---------------------------------------------------
