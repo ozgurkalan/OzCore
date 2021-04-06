@@ -42,3 +42,4 @@ sphinxcontrib-napoleon
 myst-parser
 rstcheck
 recommonmark
+pytest-httpserver
