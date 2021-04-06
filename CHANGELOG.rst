@@ -4,6 +4,7 @@ v1.1.11
 * Include unzip helper function
 * Add dependencies: pytest_httpserver, typer, tqdm
 * config and Makefile for pre-publish actions of the package
+* ozcore.__version__ is available
 
 v1.1.10
 ~~~~~~~
