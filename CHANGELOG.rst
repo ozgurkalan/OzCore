@@ -2,6 +2,7 @@ v1.1.12
 ~~~~~~~
 
 * fixed ipyaggrid view
+* added group by column for AG Grid
 
 v1.1.11
 ~~~~~~~
