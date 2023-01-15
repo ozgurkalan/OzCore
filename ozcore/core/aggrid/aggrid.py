@@ -24,7 +24,7 @@ class Grid:
             df: Dataframe
         
         keyword arguments:
-            groupby: list|str, define fields to group by 
+            groupby: list|str, define fields to group by (deprecated, use grouping column instead)
                 
             enableSorting: bool, default True
             enableFilter: bool, default True
@@ -50,7 +50,7 @@ class Grid:
             a dataframe displayed with AG Grid in a Jupyter Notebook
         """
 
-        column_defs = [{"field": k} for k in df.columns]
+        column_defs = [{"field": k, "enableRowGroup":True, 'hide':False} for k in df.columns]
 
         grid_options = {
             'enableSorting': True,
@@ -58,6 +58,12 @@ class Grid:
             'enableColResize': True,
             'enableRangeSelection': True,
             'enableRangeHandle': True,
+            'suppressDragLeaveHidesColumns': False,
+            'suppressMakeColumnVisibleAfterUnGroup': False,
+            'roupUseEntireRow':True,
+            'rowGroupPanelShow': 'always',
+            'animateRows':True,
+            'groupHideOpenParents':False,
         }
 
         settings = {
