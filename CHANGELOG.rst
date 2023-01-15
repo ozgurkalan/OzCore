@@ -1,3 +1,8 @@
+v1.1.12
+~~~~~~~
+
+* fixed ipyaggrid view
+
 v1.1.11
 ~~~~~~~
 
