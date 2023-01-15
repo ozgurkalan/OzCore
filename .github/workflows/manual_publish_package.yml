@@ -38,10 +38,6 @@ jobs:
     - name: Install dependencies
       run: poetry install
 
-    - name: Test with pytest
-      run: |
-        python -m poetry run python -m pytest -v tests
-
     - name: set version 
       run: poetry version $(git describe --tags --abbrev=0)
 
