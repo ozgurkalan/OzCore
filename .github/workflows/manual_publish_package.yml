@@ -3,7 +3,7 @@
 # https://nicholasnadeau.me/post/2020/8/one-version-to-rule-them-all-keeping-your-python-package-version-number-in-sync-with-git-and-poetry/
 # https://levelup.gitconnected.com/how-to-manually-trigger-a-github-actions-workflow-4712542f1960
 
-name: Publish Python package on version tag
+name: Manually Publish package
 on: [workflow_dispatch]
 jobs:
   build:
