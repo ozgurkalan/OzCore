@@ -11,12 +11,12 @@ classifiers =[
     "Development Status :: 5 - Production/Stable",
     "Topic :: Software Development :: Libraries :: Python Modules",
     'Intended Audience :: Developers',
-    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.9",
     "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
 ] 
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.9"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.1"
@@ -73,7 +73,7 @@ vcs = "git"
 style = "semver"
 
 [tool.black]
-target-version = ['py310']
+target-version = ['py39']
 exclude = '''
 (
     asv_bench/env
