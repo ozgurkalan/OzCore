@@ -1,3 +1,12 @@
+v1.1.13
+~~~~~~~
+
+* moved all dependencies to the group Dev
+* fixed alembic migration module import issue
+* fixed qgrid ipywidgets issue by downgrading ipywidgets
+* removed google translate module and translate helper function
+
+
 v1.1.12
 ~~~~~~~
 
