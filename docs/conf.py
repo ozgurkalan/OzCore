@@ -22,11 +22,11 @@ sys.path.insert(0, os.path.abspath('..'))
 # -- Project information -----------------------------------------------------
 
 project = 'OzCore'
-copyright = '2021, OZinClouds'
+copyright = '2023, OZinClouds'
 author = 'Ozgur Kalan'
 
 # The full version, including alpha/beta/rc tags
-release = '1.2'
+release = '1.1.13'
 
 
 # -- General configuration ---------------------------------------------------
@@ -44,7 +44,7 @@ extensions = [
 'sphinx.ext.inheritance_diagram',
 'sphinx.ext.autosummary',
 "sphinx.ext.autosectionlabel",
-'sphinxcontrib.napoleon',
+'sphinx.ext.napoleon',
 "myst_parser",
 ]
 

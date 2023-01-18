@@ -19,7 +19,6 @@ html2text
 markdown2
 emoji
 Faker
-google-trans-new
 python-docx
 docxcompose
 jupyter-contrib-nbextensions
