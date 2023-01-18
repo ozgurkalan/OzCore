@@ -25,11 +25,6 @@ def test_md_2_html():
     
     assert result == expected
 
-def test_translate():
-    result = core.translate(text="merhaba 😃", dest="en", src="auto", html=True)
-    expected = "<p>merhaba 😃 </p>\n"
-    
-    assert result == expected
     
 @pytest.mark.parametrize("val, node, expected",
     [

@@ -6,7 +6,6 @@ import pandas as pd
 import alembic
 import logging
 
-
 class ORM:
     """  
     Sqlite alter operations with ORM and Alembic
@@ -53,7 +52,7 @@ class ORM:
         
         
         with self.engine.connect() as conn: 
-                ctx = alembic.migration.MigrationContext.configure(conn)
+                ctx = alembic.runtime.migration.MigrationContext.configure(conn)
                 op = alembic.operations.Operations(ctx)
                 if not isinstance(col, sa.sql.schema.Column):
                     col = sa.Column(col, type_=type_) 
@@ -92,7 +91,7 @@ class ORM:
         
             
         with self.engine.connect() as conn: 
-            ctx = alembic.migration.MigrationContext.configure(conn)
+            ctx = alembic.runtime.migration.MigrationContext.configure(conn)
             op = alembic.operations.Operations(ctx)
             with op.batch_alter_table(table_name) as batch_op:
                 # sqlite has different column operation
@@ -137,7 +136,7 @@ class ORM:
             return False
         
         with self.engine.connect() as conn: 
-            ctx = alembic.migration.MigrationContext.configure(conn)
+            ctx = alembic.runtime.migration.MigrationContext.configure(conn)
             op = alembic.operations.Operations(ctx)
             with op.batch_alter_table(table_name) as batch_op:
                 # sqlite has no drop column operation

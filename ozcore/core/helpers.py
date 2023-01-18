@@ -2,12 +2,7 @@
 Helper functions.
 
 Functions can be directly called from core
-
-usage example::
-
-    from ozcore import core
     
-    core.translate("merhaba")
 
 """
 
@@ -29,7 +24,6 @@ import ast # for safe eval of list nodes in json fields (ast.literal_eval(s))
 import html2text  # clean html
 from markdown2 import Markdown as md  # markdown to html or vice versa
 import emoji
-from google_trans_new import google_translator
 
 
 def now_prefix(separator="-", format="now"):
@@ -85,46 +79,7 @@ def md_2_html(md_text):
     html = markdowner.convert(md_text)
     return html
 
-def translate(text="None", dest="en", src="auto", html=False):
-    """ 
-    translate text via Google Translator.
-        | connects free to google translator,
-        | limits text to max. 12.000 chars
-    
-    parameters:
-        text: str, text to translate (may use html or markdown too)
-        dest: str, destination lang, defaults to english (en)
-        src: str, source lang, defaults to auto
-        html: bool, if cleaned and set False returns Markdown, if set True returns html 
-        
-    returns:
-        str or html
 
-    warning: 
-        | given text should not have special chars 
-        | and may need to be cleaned by _clean_html
-    """
-    # google limits text size:
-    if len(text) > 12000:
-        text = text[:12000]
-
-    # cleans the text with lean_html (google rejects some tags.)
-    text = clean_html(text)
-
-    # first demojinize with special delimiters
-    text = emoji.demojize(text, use_aliases=False, delimiters=("__", "__"))
-
-    # Translate
-    translator = google_translator()
-    T = translator.translate(text=text, lang_tgt=dest, lang_src=src)
-
-    # then re-emojinize
-    text_translated = emoji.emojize(T, use_aliases=False, delimiters=("__", "__"))
-
-    if html:
-        return md_2_html(text_translated)
-    else:
-        return text_translated
     
 def serialize_a_json_field(val, node=None):
         """ 
