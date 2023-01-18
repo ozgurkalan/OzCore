@@ -2,6 +2,7 @@ v1.1.13
 ~~~~~~~
 
 * moved all dependencies to the group Dev
+* Poetry version updated
 * fixed alembic migration module import issue
 * fixed qgrid ipywidgets issue by downgrading ipywidgets
 * removed google translate module and translate helper function
