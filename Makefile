@@ -2,12 +2,13 @@
 
 help:
 	@echo "Pre-publish actions"
-	@echo "ready: preparing to publish"
+	@echo "ready: prepare docs for publish"
 	@echo "switch: git switch branches"
 
 ready:
 # create requirements.txt for Sphinx
-	@python config.py create
+	@echo "creating requirements.txt..."
+	@poetry export -f requirements.txt -o docs/requirements.txt --with dev --without-hashes
 
 switch:
 # switch between branches
