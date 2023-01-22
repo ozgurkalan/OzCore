@@ -1,3 +1,8 @@
+v1.1.15
+~~~~~~~
+
+* removed office module from OzCore
+
 v1.1.14
 ~~~~~~~
 
