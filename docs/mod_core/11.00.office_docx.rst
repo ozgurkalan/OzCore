@@ -1,8 +1,0 @@
-====================
-MS Docx File Helpers
-====================
-
-
-.. autoclass:: ozcore.core.office.docx.docx.Docx
-	:members:
-	:no-special-members:
