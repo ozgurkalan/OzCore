@@ -47,7 +47,7 @@ class Jupyter:
         """  
         pandas view options
         """
-        pd.reset_option("^display") # first reset all display options
+        pd.reset_option("^display", silent=True) # first reset all display options
         pd.options.display.width=None # reset limits to table width
         pd.options.display.min_rows=None # reset min row to allow max row
         pd.options.display.max_rows=100 # show at least 50 rows
