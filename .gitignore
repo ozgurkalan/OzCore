@@ -276,5 +276,5 @@ dist
 # re-remove unwanted
 .DS_Store
 tmp/
-
+ozcore.code-workspace
 
