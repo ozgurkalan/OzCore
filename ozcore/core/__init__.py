@@ -37,10 +37,6 @@ sql = __sqlite()
 from ozcore.core.data.csv.base import Base as __csv_Base
 csv = __csv_Base()
 
-# # Qgrid module
-from ozcore.core.qgrid.grid import Grid as __qGrid
-gridq = __qGrid()
-
 # # aggrid module
 from ozcore.core.aggrid.aggrid import Grid as __agGrid
 gridag = __agGrid()
