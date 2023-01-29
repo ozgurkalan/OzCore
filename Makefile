@@ -2,14 +2,14 @@
 
 help:
 	@echo "Pre-publish actions"
-	@echo "ready: prepare docs for publish"
-	@echo "switch: git switch branches"
+	@echo "version: bump package version from latest tag"
+	@echo "docs: prepare docs for publish"
 
-ready:
+version:
+	@poetry version $(dunamai from any)
+
+docs:
 # create requirements.txt for Sphinx
 	@echo "creating requirements.txt..."
 	@poetry export -f requirements.txt -o docs/requirements.txt --with dev --without-hashes
 
-switch:
-# switch between branches
-	@git switch -
