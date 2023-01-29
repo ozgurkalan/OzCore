@@ -6,16 +6,6 @@ note:
     in order not to duplicate variables, some of the modules are called with dunder method 
 
 """
-# helper functions
-from ozcore.core.helpers import (
-    now_prefix, # datetime str for now or today
-    clean_html, # clean html and return markdown
-    md_2_html, # convert markdown to html
-    dirme, # lists methods of a given module
-    serialize_a_json_field, # validate and join nodes of json or dict
-    unzip, # download and unzip a zip file
-)
-
 
 # path module::Folder
 from ozcore.core.path.folders import Folder as __Folder

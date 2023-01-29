@@ -8,9 +8,15 @@ now_prefix::
 
     core.now_prefix(separator='_', format='now')
 
+serialize_a_jason_field::
+
+    core.serialize_a_jason_field(some_jason_content)
+
 """
+import numpy as np
 import pandas as pd
 import datetime
+import ast # for safe eval of list nodes in json fields (ast.literal_eval(s))
 from IPython.display import display
 
 def dirme(me):
@@ -57,3 +63,38 @@ def now_prefix(separator:str ="-", format:str ="now")->str:
         format= "%y%m%d"
         
     return datetime.datetime.today().strftime(format)
+
+    
+def serialize_a_json_field(val, node=None):
+        """Safely eval a field with a string list or dict inherited from a json file
+            e.g. [{name:test}] => list object having dict node 'name'
+        
+        parameters:
+            val: json | dict, field value passed
+            node: str, key name in the dictionary
+            
+        returns:
+            * semicolon seperated values if val is a set, dict or list
+            * if node is given, returns the values in the node as semicolon separated string
+            * if val is None, returns None
+            * if fails to the opretion returns back the val itself
+            
+        hint:
+            useful in serializing fields in a dataframe having dict like objects
+        """
+        if val == np.nan: return val # return NaN values back
+    
+        try:
+            val = ast.literal_eval(str(val)) # first be sure it is str then eval as dict/list object
+
+            if node:
+                if isinstance(val, dict) and (node in val.keys()):
+                    val = val.get(node) # get the node values
+                
+                
+            val = set(list(val)) # return a list
+            val = sorted(val)
+            return ";".join(val) # return a string separated by ;
+
+        except:
+            return val # if try is not successful, return back the value
