@@ -3,8 +3,8 @@
 
 
 # jupyter
-from .jupyter import Jupyter
-jupyter = Jupyter()
+from .jupyter import Jupyter as __Jupyter
+jupyter = __Jupyter()
 
 # helper functions
 from .helper import (
