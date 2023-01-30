@@ -3,6 +3,6 @@ module Jupter
 ! no tests
 """
 import logging
-from ozcore.core import jupyter
+from ozcore.core.utils import jupyter
 def test_default():
-    logging.warning("Just testing the importing jupyter...")
+    logging.warning("Testing by importing jupyter module")
