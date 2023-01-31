@@ -124,10 +124,10 @@ class TestSqlite:
         path = Path(tmpdir).joinpath("sample.db")
         # create sqlite file
         with sqlite3.connect(path) as conn:
-            core.dummy.df1.to_sql(name="df1", con=conn, index=False, if_exists='replace')
+            core.df.dummy.df1.to_sql(name="df1", con=conn, index=False, if_exists='replace')
             # skip the dict column in col5
-            core.dummy.df2.iloc[:,0:-1].to_sql(name="df2", con=conn, index=False, if_exists='replace') 
-            core.dummy.df3.to_sql(name="df3", con=conn, index=False, if_exists='replace')
+            core.df.dummy.df2.iloc[:,0:-1].to_sql(name="df2", con=conn, index=False, if_exists='replace') 
+            core.df.dummy.df3.to_sql(name="df3", con=conn, index=False, if_exists='replace')
         core.sql.set_engine(path)
 
         yield
@@ -164,10 +164,10 @@ class TestSqlite:
         # GIVEN tables df1, df2, df3
         # WHEN request df1
         # THEN columns should match dummy.df1
-        assert [e.name for e in core.sql.columns(core.sql.tables.df1)] == list(core.dummy.df1.columns)
+        assert [e.name for e in core.sql.columns(core.sql.tables.df1)] == list(core.df.dummy.df1.columns)
         
     def test_if_column_exits_works_well(self):
-        # GIVEN table df1 derived from core.dummy.df1
+        # GIVEN table df1 derived from core.df.dummy.df1
         # WHEN request col1 if exists in columns
         # THEN should assert True
         assert core.sql.column_exists("df1", "col1") == True
@@ -175,7 +175,7 @@ class TestSqlite:
         assert core.sql.column_exists("df1", "a_non_existing_column") == False
         
     def test_if_table_exits_works_well(self):
-        # GIVEN table df1 derived from core.dummy.df1
+        # GIVEN table df1 derived from core.df.dummy.df1
         # WHEN request df1 as table_name
         # THEN should assert True
         assert core.sql.table_exists("df1") == True
@@ -195,8 +195,8 @@ class TestSqlite:
         [(1),(3),(5)]
     )    
     def test_reading_a_table_from_database(self, limit):
-        # GIVEN table df1 derived from core.dummy.df1
-        df = core.dummy.df1
+        # GIVEN table df1 derived from core.df.dummy.df1
+        df = core.df.dummy.df1
         # WHEN read from df1 table in db
         db = core.sql.read(table_name="df1", limit=limit, index_column=None)
         # THEN they should match
@@ -213,10 +213,10 @@ class TestORM:
         path = Path(tmpdir).joinpath("sample.db")
         # create sqlite file
         with sqlite3.connect(path) as conn:
-            core.dummy.df1.to_sql(name="df1", con=conn, index=False, if_exists='replace')
+            core.df.dummy.df1.to_sql(name="df1", con=conn, index=False, if_exists='replace')
             # skip the dict column in col5
-            core.dummy.df2.iloc[:,0:-1].to_sql(name="df2", con=conn, index=False, if_exists='replace') 
-            core.dummy.df3.to_sql(name="df3", con=conn, index=False, if_exists='replace')
+            core.df.dummy.df2.iloc[:,0:-1].to_sql(name="df2", con=conn, index=False, if_exists='replace') 
+            core.df.dummy.df3.to_sql(name="df3", con=conn, index=False, if_exists='replace')
         core.sql.set_engine(path)
 
         yield
@@ -228,8 +228,8 @@ class TestORM:
         
       
     def test_adding_a_new_column_in_a_table(self):
-        # GIVEN table df1 derived from core.dummy.df1
-        df = core.dummy.df1
+        # GIVEN table df1 derived from core.df.dummy.df1
+        df = core.df.dummy.df1
         # WHEN a new column added
         col = "a_new_column"
         # THEN it should be in db' table' columns
@@ -243,8 +243,8 @@ class TestORM:
             core.sql.sa_add_a_column("df1", col)
             
     def test_droping_a_column_in_a_table(self):
-        # GIVEN table df1 derived from core.dummy.df1
-        df = core.dummy.df1
+        # GIVEN table df1 derived from core.df.dummy.df1
+        df = core.df.dummy.df1
         # WHEN droping col1
         # THEN we have no col1
         core.sql.sa_drop_a_column("df1", "col1")
@@ -253,7 +253,7 @@ class TestORM:
         assert list(df.columns.difference(db.columns)) == ["col1"]      
         
     def test_changing_a_column_type(self):
-        # GIVEN table df1 derived from core.dummy.df1
+        # GIVEN table df1 derived from core.df.dummy.df1
         # GIVEN col2 is int
         # WHEN we change col2 dtype int to str in db
         # THEN we should get a str from col2
@@ -264,19 +264,19 @@ class TestORM:
         
         
     def test_sa_table_is_a_table_object(self):
-        # GIVEN table df1 derived from core.dummy.df1
+        # GIVEN table df1 derived from core.df.dummy.df1
         # WHEN sa_table requested
         # THEN returns a sa.Table object
         assert type(core.sql.sa_table("df1")) == sa.Table
 
     def test_sa_column_is_a_column_object_of_a_given_table(self):
-        # GIVEN table df1 derived from core.dummy.df1
+        # GIVEN table df1 derived from core.df.dummy.df1
         # WHEN sa_column requested
         # THEN returns a sa.column object
         assert type(core.sql.sa_column("df1","col1")) == sa.Column
         
     def test_updating_a_record_in_a_table(self):
-        # GIVEN table df1 derived from core.dummy.df1
+        # GIVEN table df1 derived from core.df.dummy.df1
         # WHEN col1 first record=a and we update it as x
         # THEN should be the read csv returns that field
         core.sql.sa_update_a_record(table_name="df1", column_name="col1", compare_column="col2", compare_val=0, val="x")
@@ -286,11 +286,11 @@ class TestORM:
         assert db.loc[0,"col1"] == "x"
         
     def test_updating_entire_column_with_a_given_df(self):
-        # GIVEN table df1 derived from core.dummy.df1 as table to be updated
-        # GIVEN table df2 derived from core.dummy.df2 having a diffrent col3 (person names than df1)
+        # GIVEN table df1 derived from core.df.dummy.df1 as table to be updated
+        # GIVEN table df2 derived from core.df.dummy.df2 having a diffrent col3 (person names than df1)
         # WHEN we update col3 - the people 
         # THEN our first record in col3 should be ``Christina Cobb`` according to Faker name in seed 99
-        source_df = core.dummy.df2
+        source_df = core.df.dummy.df2
         core.sql.sa_update_a_column(table_name="df1", column_name="col3", compare_column="col1", source_df=source_df)
         assert core.sql.read("df1").loc[0,"col3"] == source_df.loc[0, "col3"]
         

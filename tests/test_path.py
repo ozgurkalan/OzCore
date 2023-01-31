@@ -122,9 +122,9 @@ class Test_Path_TMP_Folder():
         # clean
         clean_tmp
         # create csv files
-        core.dummy.df1.to_csv(tmp_folder.joinpath("01_sample.csv"), index=False)
-        core.dummy.df2.to_csv(tmp_folder.joinpath("02_sample.csv"), index=False)
-        core.dummy.df3.to_csv(tmp_folder.joinpath("03_sample.csv"), index=False)
+        core.df.dummy.df1.to_csv(tmp_folder.joinpath("01_sample.csv"), index=False)
+        core.df.dummy.df2.to_csv(tmp_folder.joinpath("02_sample.csv"), index=False)
+        core.df.dummy.df3.to_csv(tmp_folder.joinpath("03_sample.csv"), index=False)
         
         # GIVEN there is tmp folder in test_folder
         tmp = TMP_Folder(tmp_root=test_folder, tmp_folder_name="tmp")

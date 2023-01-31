@@ -18,9 +18,9 @@ class Test_CSV_Base_Class:
         tmp = Path(tmpdir)
         self.TMP = tmp
         # create csv files
-        core.dummy.df1.to_csv(tmp.joinpath("01_sample.csv"), index=False)
-        core.dummy.df2.to_csv(tmp.joinpath("02_sample.csv"), index=False)
-        core.dummy.df3.to_csv(tmp.joinpath("03_sample.csv"), index=False)
+        core.df.dummy.df1.to_csv(tmp.joinpath("01_sample.csv"), index=False)
+        core.df.dummy.df2.to_csv(tmp.joinpath("02_sample.csv"), index=False)
+        core.df.dummy.df3.to_csv(tmp.joinpath("03_sample.csv"), index=False)
         
         yield None 
         # clean and teardown
@@ -28,31 +28,31 @@ class Test_CSV_Base_Class:
         self.TMP = None
         
     def test_reading_a_csv_file(self):
-        # GIVEN 03_sample.csv file in tmp folder with core.dummy.df3
+        # GIVEN 03_sample.csv file in tmp folder with core.df.dummy.df3
         file = self.TMP.joinpath("03_sample.csv")
         # WHEN read the csv
         csv = core.csv.read(file)
         # THEN col1 columns should be equal to with dummy df3
-        pd.testing.assert_series_equal(core.dummy.df3.col1, csv.col1)
+        pd.testing.assert_series_equal(core.df.dummy.df3.col1, csv.col1)
         
         
     def test_searching_in_a_csv_file(self):
-        # GIVEN 03_sample.csv file in tmp folder with core.dummy.df3
+        # GIVEN 03_sample.csv file in tmp folder with core.df.dummy.df3
         file = self.TMP.joinpath("03_sample.csv")
         core.csv.read(file)
         # WHEN search the csv for 
         result = core.csv.search(q="curtis")
         # THEN result is the first row of df3
         pd.testing.assert_frame_equal(
-            result, core.dummy.df3.iloc[0:1]
+            result, core.df.dummy.df3.iloc[0:1]
         )
         
     def test_saving_a_csv_file(self):
-         # GIVEN 03_sample.csv file in tmp folder with core.dummy.df3
+         # GIVEN 03_sample.csv file in tmp folder with core.df.dummy.df3
         file = self.TMP.joinpath("03_sample.csv")
         core.csv.read(file)
         # GIVEN altered df is same dummy df3 with first row, col3 (name) as hello
-        df_altered = core.dummy.df3.copy()
+        df_altered = core.df.dummy.df3.copy()
         df_altered.loc[0,"col3"] = "hello"
         # WHEN save
         core.csv.save(df_altered, index=False, overwrite=False)
@@ -74,9 +74,9 @@ class Test_CSV_Process_Class:
         tmp = Path(tmpdir)
         self.TMP = tmp
         # create csv files
-        core.dummy.df1.to_csv(tmp.joinpath("01_sample.csv"), index=False)
-        core.dummy.df2.to_csv(tmp.joinpath("02_sample.csv"), index=False)
-        core.dummy.df3.to_csv(tmp.joinpath("03_sample.csv"), index=False)
+        core.df.dummy.df1.to_csv(tmp.joinpath("01_sample.csv"), index=False)
+        core.df.dummy.df2.to_csv(tmp.joinpath("02_sample.csv"), index=False)
+        core.df.dummy.df3.to_csv(tmp.joinpath("03_sample.csv"), index=False)
         
         yield None 
         # clean and teardown
@@ -86,7 +86,7 @@ class Test_CSV_Process_Class:
     
     def test_validate_csv_for_processing(self):  
            
-        # GIVEN 01_sample.csv file in tmp folder with core.dummy.df1
+        # GIVEN 01_sample.csv file in tmp folder with core.df.dummy.df1
         file = self.TMP.joinpath("01_sample.csv")   
         
         # WHEN csv has no processed column
@@ -96,7 +96,7 @@ class Test_CSV_Process_Class:
             
         # WHEN csv has processed column but not in [None, 1, 0]
         # THEN raise Exception
-        df = core.dummy.df1.copy()
+        df = core.df.dummy.df1.copy()
         df = df.assign(processed=0)
         df.processed = df.processed.astype(int)
         df.loc[0,"processed"] = 3 # error, should be between [1, 0]
@@ -123,7 +123,7 @@ class Test_CSV_Process_Class:
     @staticmethod
     def setup_processed_csv(tmp, mark_all_processed=False):
         file = tmp.joinpath("01_sample.csv")   
-        df = core.dummy.df1.copy()
+        df = core.df.dummy.df1.copy()
         df = df.assign(processed=0)
         df.processed = df.processed.astype(int)
         df.loc[0,"processed"] = 1 # set the first record as processed

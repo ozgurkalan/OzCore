@@ -1,16 +1,15 @@
 """ dataframe helper class tests """
 
 import pandas as pd
-import numpy as np
 from ozcore import core
 import pytest
 
 def test_update_a_dataframe_column():
     # df_to_update, df_as_source, unique_col, col_to_update
     # GIVEN a df having person names in col3 as df_to_update
-    df_to_update = core.dummy.df1
+    df_to_update = core.df.dummy.df1
     # GIVEN another df having person names in col3 as df_as_source
-    df_as_source = core.dummy.df2
+    df_as_source = core.df.dummy.df2
     # GIVEN col1 is unique for two dataframes
     unique_col = "col1"
     # WHEN col3 where person names to be updated
@@ -24,10 +23,10 @@ def test_update_a_dataframe_column():
 @pytest.mark.parametrize(
     "df_1, df_2, col_to_compare, side, expected",
     [
-        (core.dummy.df1, core.dummy.df2, "col1", "both", 0),
-        (core.dummy.df1, core.dummy.df2, "col3", "left", 5),
-        (core.dummy.df1, core.dummy.df2, "col3", "left", 5),
-        (core.dummy.df1, core.dummy.df2, "col3", "both", 10),
+        (core.df.dummy.df1, core.df.dummy.df2, "col1", "both", 0),
+        (core.df.dummy.df1, core.df.dummy.df2, "col3", "left", 5),
+        (core.df.dummy.df1, core.df.dummy.df2, "col3", "left", 5),
+        (core.df.dummy.df1, core.df.dummy.df2, "col3", "both", 10),
     ]
 )
 def test_compare_two_dataframes(df_1, df_2, col_to_compare, side, expected):
@@ -39,8 +38,8 @@ def test_compare_two_dataframes(df_1, df_2, col_to_compare, side, expected):
     )) == expected
 
 def test_add_a_column_from_another_dataframe():
-    into_df = core.dummy.df3 # has no col5
-    from_df =  core.dummy.df1 # col5 is a datetime object
+    into_df = core.df.dummy.df3 # has no col5
+    from_df =  core.df.dummy.df1 # col5 is a datetime object
     unique_col = "col1"
     col_to_add = "col5"
     
@@ -58,16 +57,16 @@ def test_add_a_column_from_another_dataframe():
     ]
 )
 def test_searching_a_dataframe(q, columns):
-    # GIVEN core.dummy.df1 column `col3`has the value = 'Derrick Smith'
+    # GIVEN core.df.dummy.df1 column `col3`has the value = 'Derrick Smith'
     # WHEN searched
     # THEN result is the first row of the dataframe
-    expected = core.dummy.df1.iloc[0:1]
-    result = core.df.search(core.dummy.df1, q, columns)
+    expected = core.df.dummy.df1.iloc[0:1]
+    result = core.df.search(core.df.dummy.df1, q, columns)
     pd.testing.assert_frame_equal(expected, result)
     
 def test_png_table(tmp_folder, clean_tmp):
-    # GIVEN core.dummy.df1 as a sample dataframe
-    df = core.dummy.df1
+    # GIVEN core.df.dummy.df1 as a sample dataframe
+    df = core.df.dummy.df1
     # WHEN saved as png table
     clean_tmp
     core.df.pngTable(df, save=True, in_folder=tmp_folder, colwidth_factor=0.15, fontsize=9, formatFloats=True)

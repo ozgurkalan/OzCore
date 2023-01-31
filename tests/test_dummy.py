@@ -7,9 +7,9 @@ from ozcore import core
 
 def test_emp_dummy():
     # GIVEN emp as property
-    # WHEN called directly from core.dummy
+    # WHEN called directly from core.df.dummy
     # THEN returns a record with a shape(10,12)
-    assert core.dummy.emp.shape == (10,12)
+    assert core.df.dummy.emp.shape == (10,12)
     
 @pytest.mark.parametrize(
     "template, n, verbose,expected",
@@ -22,14 +22,14 @@ def test_emp_dummy():
     ]
 )
 def test_dummy_dataframe_with_n_records(template, n, verbose, expected):
-    assert core.dummy.dataframe(template=template, n=n, verbose=verbose).shape == expected
+    assert core.df.dummy.dataframe(template=template, n=n, verbose=verbose).shape == expected
     
 def test_dummy_df_properties():
     """ df1, df2, df3 """
     # GIVEN dataframes faked with seed 99
-    df1 = core.dummy.df1
-    df2 = core.dummy.df2
-    df3 = core.dummy.df3
+    df1 = core.df.dummy.df1
+    df2 = core.df.dummy.df2
+    df3 = core.df.dummy.df3
     
     assert df1.shape == (5,5)
     assert df1.col5.dtype.type == np.datetime64 # datetime object
