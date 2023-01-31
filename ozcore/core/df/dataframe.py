@@ -199,3 +199,13 @@ def search(df_to_search:DataFrame, q:str, columns:Union[str,list]=None)->DataFra
     return df[df_cols.apply(lambda x: x.str.contains(q, case=False, na=False).any() \
                                         if x.dtype == "object" else x, axis=1)]
     
+def cols(df: DataFrame)->dict:
+    """Returns dataframe columns as a dictionary with index positions
+    
+    parameters:
+        df: dataframe to be searched
+    
+    returns:
+        dictionary with index positions
+    """
+    return list(zip(df.columns, df.columns.get_indexer(df.columns)))

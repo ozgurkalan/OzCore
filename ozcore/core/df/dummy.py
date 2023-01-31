@@ -27,7 +27,7 @@ usage::
     # ... you also have access to Faker class
     
     
-TODO: needs to be refactored
+TODO: col with years
 
 """
 import pandas as pd

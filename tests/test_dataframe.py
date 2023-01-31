@@ -1,4 +1,9 @@
-""" dataframe helper class tests """
+""" dataframe helper function tests 
+
+
+TODO: add tests for col, where i can be string
+
+"""
 
 import pandas as pd
 from ozcore import core
@@ -73,3 +78,18 @@ def test_png_table(tmp_folder, clean_tmp):
     # THEN Downdloads folder has one png file
     assert len(list(tmp_folder.glob("table-*.png"))) == 1
     clean_tmp
+    
+@pytest.mark.parametrize(
+    "col, i",
+    [
+        ("col1", 0),
+        ("col3", 2)
+    ]
+)
+def test_cols(col, i):
+    # GIVEN core.df.dummy.df1 as a sample dataframe
+    # WHEN cols is called
+    # THEN result is the column index of the dataframe
+    df = core.df.dummy.df1
+    expected = df.columns.get_loc(col)
+    assert expected == core.df.cols(df)[i][1]
