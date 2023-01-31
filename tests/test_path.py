@@ -6,7 +6,7 @@ Test path module:
 
 import os
 from ozcore import core
-from pathlib import Path, PosixPath
+from pathlib import Path, PosixPath, WindowsPath
 import sys
 import pytest
 
@@ -41,6 +41,11 @@ class TestFolder():
         # WHEN asked it is a subfolder of tests folder
         # THEN should assert True
         assert folder.is_a_subfolder(path_to_check=self.TEST_FOLDER, parent_folder=Path(".")) == True
+        with pytest.raises(TypeError):
+            folder.is_a_subfolder(path_to_check=self.TEST_FOLDER, parent_folder=[Path(".")])
+            # WHEN path param is other than str, POSIXPath or WindowsPath
+            # THEN should raise TypeError
+            # this also checks the method check_path()
     
     def test_search_a_folder(self):
         # GIVEN test_folder with only one .toml file
@@ -50,6 +55,18 @@ class TestFolder():
         expected = self.TOML
         
         assert expected in result
+        
+    def test_listdir_a_folder(self):
+        # GIVEN test_folder with many files
+        # WHEN listdir in test_folder
+        # THEN files are in a list and each of them is a POSIXPATH or a WindowsPath
+        result = folder.listdir(self.TEST_FOLDER)
+        expected = list
+        
+        assert type(result) == list
+        assert len(result) > 1
+        assert type(result[0]) == PosixPath or type(result[0]) == WindowsPath
+        
 
     @pytest.mark.skipif(
         sys.platform != "darwin",
@@ -62,6 +79,7 @@ class TestFolder():
         """
         assert folder.iCloud.exists()
         assert folder.Downloads.exists()
+        assert folder.Documents.exists()
         assert folder.OneDrive.exists()
         assert folder.gDrive.exists()
 
@@ -74,8 +92,12 @@ class TestFolder():
         assert core.folder.check_path(self.TEST_FOLDER) == self.TEST_FOLDER
         assert core.folder.check_path(str(self.TEST_FOLDER)) == self.TEST_FOLDER
         assert core.folder.check_path(self.TOML, is_file=True) == self.TOML
+        assert core.folder.check_path(self.TOML, is_file=False, get_parent=True) == self.TEST_FOLDER
         with pytest.raises(Exception):
-            core.folder.check_path("test_folder")
+            core.folder.check_path("test_folder_not_exists", is_file=False, get_parent=False)
+        with pytest.raises(TypeError):
+            core.folder.check_path("test_folder", is_file=True, get_parent=False)
+            core.folder.check_path(self.TOML, is_file=False, get_parent=False)
     
     
 
