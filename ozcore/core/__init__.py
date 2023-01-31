@@ -11,14 +11,6 @@ note:
 from ozcore.core.path.folders import Folder as __Folder
 folder = __Folder()  
 
-# Dummy Data
-from ozcore.core.data.dummy import Dummy as __Dummy
-dummy = __Dummy()
-
-# Dataframe module
-from ozcore.core.data.dataframe import Dataframe as __Dataframe
-df = __Dataframe()
-
 # # SQL
 from ozcore.core.data.sqlite.sqlite import Sqlite as __sqlite
 sql = __sqlite()
@@ -32,7 +24,8 @@ from ozcore.core.aggrid.aggrid import Grid as __agGrid
 view = __agGrid().view
 
 # # utils
-# from .utils import *
 from ozcore.core import utils
 
+# # df
+from ozcore.core import df
 
