@@ -2,7 +2,8 @@
 
 """
 
-import pandas as pd
+import numpy as np
+from pandas.core.frame import DataFrame
 from ipyaggrid import Grid as agGrid
 
 
@@ -16,7 +17,7 @@ class Grid:
     def __init__(self):
         """  parameters for grid options"""
 
-    def view(self, df, **kwargs):
+    def view(self, df: DataFrame, **kwargs):
         """  
         view a dataframe with AG Grid
         
@@ -24,7 +25,8 @@ class Grid:
             df: Dataframe
         
         keyword arguments:
-            groupby: list|str, define fields to group by (deprecated, use grouping column instead)
+            groupby: list|str, define fields to group by; order of the list reflected to grouping order
+            hide: list|str, define fields to hide (esp. when grouping), can be overridden on grid
                 
             enableSorting: bool, default True
             enableFilter: bool, default True
@@ -50,7 +52,7 @@ class Grid:
             a dataframe displayed with AG Grid in a Jupyter Notebook
         """
 
-        column_defs = [{"field": k, "enableRowGroup":True, 'hide':False} for k in df.columns]
+        column_defs = [{"field": k, "enableRowGroup":True, 'hide':False, 'rowGroupIndex': None} for k in df.columns]
 
         grid_options = {
             'enableSorting': True,
@@ -86,16 +88,21 @@ class Grid:
                 grid_options[arg] = kwargs[arg]
             elif arg in settings:
                 settings[arg] = kwargs[arg]
+            # groupby columns
             elif arg == "groupby":
-                val = kwargs[arg]
-                if not isinstance(val, list):
-                    val = [val]
-                for field in val:
-                    pop = [i for i, e in enumerate(column_defs) if e["field"] == field]
-                    if len(pop) == 1:
-                        pop = pop[0]
-                        column_defs.pop(pop)
-
+                vals = kwargs[arg]
+                if not isinstance(vals, list):
+                    vals = [vals]
+                for i, e in enumerate(np.searchsorted(df.columns, vals)):
+                    column_defs[e]['rowGroupIndex']=i
+            # hide columns
+            elif arg == "hide":
+                vals = kwargs[arg]
+                if not isinstance(vals, list):
+                    vals = [vals]
+                for i, e in enumerate(np.searchsorted(df.columns, vals)):
+                    column_defs[e]['hide']=True
+                    
         grid_options["columnDefs"] = column_defs
 
         g = agGrid(

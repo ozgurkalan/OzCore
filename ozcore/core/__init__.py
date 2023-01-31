@@ -29,7 +29,7 @@ csv = __csv_Base()
 
 # # aggrid module
 from ozcore.core.aggrid.aggrid import Grid as __agGrid
-gridag = __agGrid()
+view = __agGrid().view
 
 # # utils
 # from .utils import *
