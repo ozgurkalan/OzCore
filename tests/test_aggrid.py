@@ -4,4 +4,5 @@ module aggrid
 """
 import logging
 def test_default():
-    logging.warning("No tests for AGgrid module is available!")
+    from ozcore.core import view
+    logging.warning("Test by calling view method from AGgrid module!")
