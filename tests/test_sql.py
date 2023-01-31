@@ -95,10 +95,10 @@ class TestBase:
         # GIVEN sample.db in ./test_folder/tmp
         with sqlite3.connect(tmp_folder.joinpath("sample.db")):
             pass
-        # WHEN engine param is set as a relative path string
+        # WHEN engine param is set as a relative path string with wrong extension
         # THEN should raise error
-        with pytest.raises(Exception):
-            core.sql.set_engine("test_folder/tmp/sample.db", return_engine=True)
+        with pytest.raises(Exception) as exec_info:
+            core.sql.set_engine("test_folder/tmp/sample.dbX", return_engine=True)
         
         # clean db
         tmp_folder.joinpath("sample.db").unlink()
