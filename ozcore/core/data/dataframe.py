@@ -84,7 +84,7 @@ class Dataframe:
             in_folder = core.folder.Downloads
         
         # file name and path
-        path = in_folder.joinpath(f"table-{core.now_prefix()}.png")
+        path = in_folder.joinpath(f"table-{core.utils.now_prefix()}.png")
         
         # format floats - two digits
         if formatFloats:
