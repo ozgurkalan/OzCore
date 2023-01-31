@@ -89,15 +89,15 @@ class TestFolder():
         # WHEN check the folder or file
         # THEN should retrieve their PosixPaths
         
-        assert core.folder.check_path(self.TEST_FOLDER) == self.TEST_FOLDER
-        assert core.folder.check_path(str(self.TEST_FOLDER)) == self.TEST_FOLDER
-        assert core.folder.check_path(self.TOML, is_file=True) == self.TOML
-        assert core.folder.check_path(self.TOML, is_file=False, get_parent=True) == self.TEST_FOLDER
+        assert folder.check_path(self.TEST_FOLDER) == self.TEST_FOLDER
+        assert folder.check_path(str(self.TEST_FOLDER)) == self.TEST_FOLDER
+        assert folder.check_path(self.TOML, is_file=True) == self.TOML
+        assert folder.check_path(self.TOML, is_file=False, get_parent=True) == self.TEST_FOLDER
         with pytest.raises(Exception):
-            core.folder.check_path("test_folder_not_exists", is_file=False, get_parent=False)
+            folder.check_path("test_folder_not_exists", is_file=False, get_parent=False)
         with pytest.raises(TypeError):
-            core.folder.check_path("test_folder", is_file=True, get_parent=False)
-            core.folder.check_path(self.TOML, is_file=False, get_parent=False)
+            folder.check_path(self.TEST_FOLDER, is_file=True, get_parent=False)
+            folder.check_path(self.TOML, is_file=False, get_parent=False)
     
     
 

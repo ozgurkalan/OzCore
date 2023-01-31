@@ -5,7 +5,7 @@ import re
 from ozcore import core
 
 def test_now_prefix():
-    result = core.now_prefix(separator="**", format="now")
+    result = core.utils.now_prefix(separator="**", format="now")
     
     reg = re.compile(r"\d{6}\*{2}\d{6}")
     expected = re.fullmatch(reg, result)
@@ -13,7 +13,7 @@ def test_now_prefix():
     assert expected is not None
 
 def test_dirme():
-    result = core.dirme(core)
+    result = core.utils.dirme(core)
     # IPython.display.display has NoneType
     assert type(result) is type(None)
 
@@ -26,4 +26,4 @@ def test_dirme():
         (set(list("cba")), "a_node", "a;b;c"),
         ('{"a_node": {"a","c","b"}}', "a_node", "a;b;c")])
 def test_serializing_a_json_dict_like_value(val, node, expected):
-    assert core.serialize_a_json_field(val, node) == expected
+    assert core.utils.serialize_a_json_field(val, node) == expected

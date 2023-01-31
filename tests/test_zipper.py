@@ -16,7 +16,7 @@ def test_unzip(test_folder, tmp_folder, clean_tmp):
     s.respond_with_data(sample.read_bytes(), mimetype="application/zip")    
 
     server.start()
-    core.unzip(url=server.url_for("/sample.zip"), dest=tmp_folder, chunk_size=1, remove_zip=True)
+    core.utils.unzip(url=server.url_for("/sample.zip"), dest=tmp_folder, chunk_size=1, remove_zip=True)
     server.stop()
     
     assert tmp_folder.joinpath("sample.txt").exists()
