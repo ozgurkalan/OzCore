@@ -1,12 +1,16 @@
+.PHONY: all
 # automate pre-publish actions
 
 help:
 	@echo "Pre-publish actions"
+	@echo "all: make all pre-publish actions":
 	@echo "version: bump package version from latest tag"
 	@echo "docs: prepare docs for publish"
 
+all: version docs
+
 version:
-	@poetry version $(dunamai from any)
+	@poetry version $(shell dunamai from any)
 
 docs:
 # create requirements.txt for Sphinx
