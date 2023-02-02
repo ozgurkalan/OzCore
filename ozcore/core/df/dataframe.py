@@ -12,34 +12,40 @@ basic usage::
 """
 
 from pathlib import PosixPath, WindowsPath
-import pandas as pd
-from pandas.core.frame import DataFrame
-import matplotlib.pyplot as plt
-from ozcore import core
 from typing import Union
+
+import matplotlib.pyplot as plt
+import pandas as pd
+from ozcore import core
+from pandas.core.frame import DataFrame
 from typeguard import check_argument_types
 
 
-def update_a_df_column(df_to_update:DataFrame, df_as_source:DataFrame, unique_col:str, col_to_update:str) ->DataFrame:
-    '''Updates a Dataframe column with a source Dataframe based on their common unique columns
+def update_a_df_column(
+    df_to_update: DataFrame,
+    df_as_source: DataFrame,
+    unique_col: str,
+    col_to_update: str,
+) -> DataFrame:
+    """Updates a Dataframe column with a source Dataframe based on their common unique columns
 
     parameters:
         df_to_update: dataframe, main df to be updated
         df_as_source: dataframe, source df to update the main df
         unique_col: str,
-            common columns (should have same name) to match records, 
+            common columns (should have same name) to match records,
             this unique column must have unique values
         col_to_update: str, which column value to be updated
 
     returns:
-        a copy of the updated DataFrame     
+        a copy of the updated DataFrame
 
     warning:
         index is reset during the update
-    '''
-    
+    """
+
     check_argument_types()
-    
+
     # copy df
     df = df_to_update.copy()
     source = df_as_source.copy()
@@ -59,13 +65,20 @@ def update_a_df_column(df_to_update:DataFrame, df_as_source:DataFrame, unique_co
     df.reset_index(inplace=True, drop=False)
     source.reset_index(inplace=True, drop=False)
 
-    return df    
+    return df
 
-def pngTable(df:DataFrame, colwidth_factor:float=0.20, fontsize:int = 12, formatFloats:bool = True, 
-                save:bool = False, in_folder: Union[PosixPath, WindowsPath] = None):  
-    '''Displays or saves a table as png.
+
+def pngTable(
+    df: DataFrame,
+    colwidth_factor: float = 0.20,
+    fontsize: int = 12,
+    formatFloats: bool = True,
+    save: bool = False,
+    in_folder: Union[PosixPath, WindowsPath] = None,
+):
+    """Displays or saves a table as png.
     Uses matplotlib => pandas plotting table.
-    
+
     parameters:
         df: dataframe or pivot table
         colwidth_factor: float, default 0.20, defines the width of columns
@@ -73,138 +86,161 @@ def pngTable(df:DataFrame, colwidth_factor:float=0.20, fontsize:int = 12, format
         formatFloats: bool, default True, formats as two digit prettiy floats
         save: saves the png file as table.png
         in_folder: posixpath, default None, folder to save the png file
-    
+
     returns:
         png file in Downloads folder
-    '''
-    if not isinstance(in_folder, Union[PosixPath, WindowsPath]) or not in_folder.exists():
+    """
+    if (
+        not isinstance(in_folder, Union[PosixPath, WindowsPath])
+        or not in_folder.exists()
+    ):
         in_folder = core.folder.Downloads
-    
+
     # file name and path
     path = in_folder.joinpath(f"table-{core.utils.now_prefix()}.png")
-    
+
     # format floats - two digits
     if formatFloats:
-        df.applymap(lambda x: '{:,.2f}'.format(x) if isinstance(x, float) else x)
+        df.applymap(lambda x: "{:,.2f}".format(x) if isinstance(x, float) else x)
 
     # get pandas.plotting.table
     table = pd.plotting.table
-    
-    fig, ax = plt.subplots(figsize=(1.9*df.shape[1], 0.3*df.shape[0])) # set size frame
+
+    fig, ax = plt.subplots(
+        figsize=(1.9 * df.shape[1], 0.3 * df.shape[0])
+    )  # set size frame
     ax.xaxis.set_visible(False)  # hide the x axis
     ax.yaxis.set_visible(False)  # hide the y axis
     ax.set_frame_on(False)  # no visible frame, uncomment if size is ok
-    tabla = table(ax, df, loc='upper left', colWidths=[colwidth_factor]*len(df.columns))  # where df is your data frame
-    tabla.auto_set_font_size(False) # Activate set fontsize manually
-    tabla.set_fontsize(fontsize) # if ++fontsize is necessary ++colWidths
-    tabla.scale(1.2, 1.2) # change size table
+    tabla = table(
+        ax, df, loc="upper left", colWidths=[colwidth_factor] * len(df.columns)
+    )  # where df is your data frame
+    tabla.auto_set_font_size(False)  # Activate set fontsize manually
+    tabla.set_fontsize(fontsize)  # if ++fontsize is necessary ++colWidths
+    tabla.scale(1.2, 1.2)  # change size table
     if save:
-        plt.savefig(fname=path, bbox_inches="tight", pad_inches=1) # save
+        plt.savefig(fname=path, bbox_inches="tight", pad_inches=1)  # save
         # https://stackoverflow.com/questions/56328353/matplotlib-savefig-cuts-off-pyplot-table
         plt.close()
         print(f"saved in Downloads folder as {path.stem}.png")
     else:
-        plt.show() # show the result
+        plt.show()  # show the result
         plt.close()
 
-def compare_two_df(df_1:DataFrame, df_2:DataFrame, col_to_compare:str, side="both")->DataFrame:
-    """ 
+
+def compare_two_df(
+    df_1: DataFrame, df_2: DataFrame, col_to_compare: str, side="both"
+) -> DataFrame:
+    """
     Compares two dataframes based on a given column, aka given common Series
 
     warning:
         This comparison is only checking the identical values in a Series. Other columns may not match.
-        
+
     parameters:
         df_1: dataframe 1
         df_2: dataframe 2
-        col_to_compare (str): column to make the comparison, which is common 
+        col_to_compare (str): column to make the comparison, which is common
         side: str, default `both`, options: `left`, `right`
-        
+
     returns:
         * a dataframe with diffrences of df_1 from df_2
         * empty if all match
     """
-    
+
     check_argument_types()
-        
+
     df1 = df_1.copy()
     df2 = df_2.copy()
-    
+
     df1.sort_values(col_to_compare, inplace=True)
     df2.sort_values(col_to_compare, inplace=True)
     df1.reset_index(drop=False, inplace=True)
     df2.reset_index(drop=False, inplace=True)
-    
+
     left = df1[~df1[col_to_compare].isin(df2[col_to_compare])]
     right = df2[~df2[col_to_compare].isin(df1[col_to_compare])]
-    both = pd.concat([left,right])
-    
+    both = pd.concat([left, right])
+
     if side == "left":
         return left
     elif side == "right":
         return right
     else:
         return both
-    
-def add_a_col_from_a_df(into_df:DataFrame, from_df:DataFrame, unique_col:str, col_to_add:str ) -> DataFrame:
-    """  
+
+
+def add_a_col_from_a_df(
+    into_df: DataFrame, from_df: DataFrame, unique_col: str, col_to_add: str
+) -> DataFrame:
+    """
     Add a column into a dataframe from another dataframe
-    
+
     parameters:
         into_df: dataframe, main df, which will be updated with a new column
         from_df: dataframe, source df, which has the column to add into main df
         unique_col: str, column name which is common in both dataframes
         col_to_add: str, column to be added from source dataframe
-        
+
     returns:
         * main dataframe filled with the new column and values, where unique column matches
-    
+
     warning:
         this method assumes no index
     """
-    
+
     check_argument_types()
-    
+
     main = into_df.copy()
     source = from_df.copy()
-    
+
     return main.merge(source[[unique_col, col_to_add]], on=unique_col, how="left")
 
-def search(df_to_search:DataFrame, q:str, columns:Union[str,list]=None)->DataFrame:
-    """Search all or any column of a dataframe, where columns having str (type: object) 
-    
+
+def search(
+    df_to_search: DataFrame, q: str, columns: Union[str, list] = None
+) -> DataFrame:
+    """Search all or any column of a dataframe, where columns having str (type: object)
+
     parameters:
         df_to_search: dataframe to be searched
         q: str, query term
         columns: str | list, default None, columns to search, if None all columns
-        
+
     returns:
         a dataframe with found records
-        
+
     note:
         index columns are not included.
     """
-    
+
     check_argument_types()
-    
+
     df = df_to_search.copy()
-    
+
     if columns is None:
         df_cols = df
     elif isinstance(columns, str):
         df_cols = df[[columns]]
     elif isinstance(columns, list):
         df_cols = df[columns]
-    
-    return df[df_cols.apply(lambda x: x.str.contains(q, case=False, na=False).any() \
-                                        if x.dtype == "object" else x, axis=1)]
-    
-def cols(df: DataFrame)->dict:
+
+    return df[
+        df_cols.apply(
+            lambda x: x.str.contains(q, case=False, na=False).any()
+            if x.dtype == "object"
+            else x,
+            axis=1,
+        )
+    ]
+
+
+def cols(df: DataFrame) -> dict:
     """Returns dataframe columns as a dictionary with index positions
-    
+
     parameters:
         df: dataframe to be searched
-    
+
     returns:
         dictionary with index positions
     """
