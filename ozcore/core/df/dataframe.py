@@ -245,3 +245,26 @@ def cols(df: DataFrame) -> dict:
         dictionary with index positions
     """
     return list(zip(df.columns, df.columns.get_indexer(df.columns)))
+
+def col(df: DataFrame, i:int = None, c:str = None) -> Union[int, str, bool]:
+    """Returns a str or int representing a dataframe column name or index
+        Or, checks the column name - index if both params given
+    
+    parameters:
+        df: Pandas dataframe
+        i: int, default None, index position to retrieve
+        c: str, default None, column name to retrieve index
+        
+    returns:
+        int, str or bool
+    """
+    check_argument_types()
+    
+    if i is None and c is None:
+        raise Exception('either index or column name must be specified')
+    elif c is None:
+        return df.columns[i]
+    elif i is None:
+        return df.columns.get_loc(c)
+    elif c is not None and i is not None:
+        return c == df.columns[i]
