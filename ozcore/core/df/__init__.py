@@ -7,6 +7,7 @@ from .dataframe import (
     search,
     cols,
     col,
+    uni,
 )
 
 from .dummy import Dummy as __Dummy
@@ -21,5 +22,6 @@ __all__ = [
     "search",
     "cols",
     "col",
+    "uni",
     "dummy",
 ]

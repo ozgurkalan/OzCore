@@ -122,3 +122,27 @@ def test_col(col, i):
         core.df.col(df=df, i=None, c=None)
     # WHEN col is called without a column name or an index
     # THEN raise Exception
+    
+
+def test_uni():
+    # GIVEN core.df.dummy.df_dup_parent_child a sample data
+    df = core.df.dummy.df_dup_parent_child
+
+    # WHEN called with an index or a name of a column
+    # THEN result is a list of unique records
+    expected = ['root', 'subfolder_A', 'subfolder_B', 'subfolder_C', 'subfolder_D']
+    assert core.df.uni(df, i=0, c=None) == expected
+    assert core.df.uni(df, i=None, c="parent") == expected
+    
+    # WHEN called with a list of index or a list of names 
+    # THEN result is a dataframe of unique records with a certain shape
+    expected = (14,2)
+    assert core.df.uni(df, i=None, c=["parent","child"]).shape == expected
+    assert core.df.uni(df, i=[0,1], c=None).shape == expected
+    
+    with pytest.raises(Exception):
+        core.df.uni(df=df, i=None, c=None)
+    # WHEN uni is called without a column name or an index
+    # THEN raise Exception
+    
+     

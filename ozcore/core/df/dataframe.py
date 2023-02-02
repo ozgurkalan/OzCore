@@ -15,6 +15,7 @@ from pathlib import PosixPath, WindowsPath
 from typing import Union
 
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 from ozcore import core
 from pandas.core.frame import DataFrame
@@ -246,25 +247,63 @@ def cols(df: DataFrame) -> dict:
     """
     return list(zip(df.columns, df.columns.get_indexer(df.columns)))
 
-def col(df: DataFrame, i:int = None, c:str = None) -> Union[int, str, bool]:
+
+def col(df: DataFrame, i: int = None, c: str = None) -> Union[int, str, bool]:
     """Returns a str or int representing a dataframe column name or index
         Or, checks the column name - index if both params given
-    
+
     parameters:
         df: Pandas dataframe
         i: int, default None, index position to retrieve
         c: str, default None, column name to retrieve index
-        
+
     returns:
         int, str or bool
     """
     check_argument_types()
-    
+
     if i is None and c is None:
-        raise Exception('either index or column name must be specified')
+        raise Exception("either index or column name must be specified")
     elif c is None:
         return df.columns[i]
     elif i is None:
         return df.columns.get_loc(c)
     elif c is not None and i is not None:
         return c == df.columns[i]
+
+
+def uni(
+    df: DataFrame, i: Union[int, list[int]] = None, c: Union[str, list[str]] = None
+) -> Union[DataFrame, list]:
+    """Returns a list or a dataframe containing unique values
+
+    paramaters:
+        df: Pandas DataFrame
+        i: int | list[int], default is None, index of the columns
+        c: str | list[str], default is None, name of the columns
+
+    returns:
+        if single parameter given, returns a sorted list,
+        otherwise returns a pandas DataFrame with matching unique columns
+    """
+    check_argument_types()
+
+    if i is None and c is None:
+        raise Exception("either index or column name must be specified")
+    elif c is None:
+        i = [i] if isinstance(i, int) else i
+        zf = df.iloc[:, i]
+
+    elif i is None:
+        c = [c] if isinstance(c, str) else c
+        zf = df.loc[:, c]
+    elif c is not None and i is not None:
+        pass  # last check is for index, so index is counted
+
+    if zf.shape[1] == 1:
+        ll = list(zf.iloc[:, 0].unique())
+        ll.sort()
+        return ll
+    else:
+        zf = pd.DataFrame(np.unique(zf.to_records(index=None)), columns=zf.columns)
+        return zf
