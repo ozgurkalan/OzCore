@@ -43,5 +43,14 @@ def test_dummy_df_properties():
     pd.testing.assert_frame_equal(df1.iloc[:,:2], df3.iloc[:,:2])
     pd.testing.assert_frame_equal(df2.iloc[:,:2], df3.iloc[:,:2])
     
+def test_df_dup_parent_child():
+    # GIVEN a faker dataframe with duplicated values
+    # WHEN called from core.df.dummy
+    # THEN df has 20,4 shape with certain columns
+    df = core.df.dummy.df_dup_parent_child
+    
+    assert df.shape == (20,4)
+    assert all(df.columns == ["parent","child","path","user"])
+    
     
     
