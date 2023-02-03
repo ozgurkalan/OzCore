@@ -52,5 +52,17 @@ def test_df_dup_parent_child():
     assert df.shape == (20,4)
     assert all(df.columns == ["parent","child","path","user"])
     
+def test_df_country_scores():
+    # GIVEN a faker dataframe with 50 countries having scores; two columns
+    df = core.df.dummy.df_country_scores
+    # CHECK the countries, if seed is ok
+    # WHEN called from core.df.dummy
+    # THEN should yield the results below
+    assert sum(df.score ) == 1275
+    assert df.iat[49,0] == 'Germany'
+    assert df.iat[0,0] == 'Tanzania'
+    assert df.shape == (50,2)
+    
+    
     
     

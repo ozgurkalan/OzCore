@@ -2,28 +2,34 @@
 Dummy records, ready to use
 
 hint:
-    can be directly called from core as ``core.dummy``
+    can be directly called from core as ``core.df.dummy``
 
 usage::
 
     from ozcore import core
     
-    core.dummy.emp
+    core.df.dummy.emp
     #...returns a dataframe with 10 records
     
-    core.dummy.dataframe(n=3, template="emp", verbose=True)
+    core.df.dummy.dataframe(n=3, template="emp", verbose=True)
     #...returns a dataframe with 3 records using **emp** template
     
-    core.dummy.df1
-    #...returns a dataframe with faked with seed 99 having shape(5,5)
+    core.df.dummy.df1
+    #...returns a dataframe faked with seed 99 having shape(5,5)
     
-    core.dummy.df2
-    #...returns another dataframe with faked with seed 99 having shape(5,5)
+    core.df.dummy.df2
+    #...returns another dataframe faked with seed 99 having shape(5,5)
     
-    core.dummy.df1
-    #...returns another dataframe with faked with seed 99 having shape(5,4)
+    core.df.dummy.df1
+    #...returns another dataframe faked with seed 99 having shape(5,4)
     
-    core.dummy.fake.name_female()
+    core.df.dummy.df_dup_parent_child
+    #...returns a dataframe with seed 9 having shape(20,4)
+    
+    core.df.dummy.df_country_scores
+    #...returns a dataframe with seed 0 having shape(50,2)
+    
+    core.df.dummy.fake.name_female()
     # ... you also have access to Faker class
     
     
@@ -156,46 +162,6 @@ class Dummy:
         """
         return self._make_df_w_seed_99(3)
 
-    @property
-    def df_dup_parent_child(self) -> DataFrame:
-        """Dataframe with Faker's seed 9  having two non-unique columns
-
-        returns:
-            Dataframe shape(20,4)
-        """
-        # Faker with seed 99
-        fake = Faker()
-        Faker.seed(9)
-
-        count = 20
-        df = pd.DataFrame(
-            {
-                "parent": fake.random_elements(
-                    elements=(
-                        "root",
-                        "subfolder_A",
-                        "subfolder_B",
-                        "subfolder_C",
-                        "subfolder_D",
-                    ),
-                    length=count,
-                ),
-                "child": fake.random_elements(
-                    elements=(
-                        "subfolder_E",
-                        "subfolder_F",
-                        "subfolder_G",
-                        "subfolder_H",
-                        "subfolder_J",
-                    ),
-                    length=count,
-                ),
-                "path": [fake.file_path() for _ in range(count)],
-                "user": [fake.name() for _ in range(count)],
-            }
-        )
-        return df
-
     def _make_df_w_seed_99(self, df_no=1):
         """
         creates a dummy Dataframe with Faker seed 99
@@ -250,3 +216,61 @@ class Dummy:
             return df2
         else:
             return df3
+        
+    @property
+    def df_dup_parent_child(self) -> DataFrame:
+        """Dataframe with Faker's seed 9  having two non-unique columns
+
+        returns:
+            Dataframe shape(20,4)
+        """
+        # Faker with seed 9
+        fake = Faker()
+        Faker.seed(9)
+
+        count = 20
+        df = pd.DataFrame(
+            {
+                "parent": fake.random_elements(
+                    elements=(
+                        "root",
+                        "subfolder_A",
+                        "subfolder_B",
+                        "subfolder_C",
+                        "subfolder_D",
+                    ),
+                    length=count,
+                ),
+                "child": fake.random_elements(
+                    elements=(
+                        "subfolder_E",
+                        "subfolder_F",
+                        "subfolder_G",
+                        "subfolder_H",
+                        "subfolder_J",
+                    ),
+                    length=count,
+                ),
+                "path": [fake.file_path() for _ in range(count)],
+                "user": [fake.name() for _ in range(count)],
+            }
+        )
+        return df
+
+    @property
+    def df_country_scores(self):
+        """Dataframe with Faker's seed 0 of countries with scores
+        
+        returns:
+            Dataframe shape(50,2)
+            
+        hints:
+            * begins with Tanzania, score 1 and ends with Germany score 50
+            * 50 countries 
+        """
+        # Faker with seed 0
+        fake = Faker()
+        Faker.seed(0)
+        
+        df=pd.DataFrame([(fake.country(), _+1 )for _ in range(50)], columns=['country','score'])
+        return df
