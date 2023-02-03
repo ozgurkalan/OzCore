@@ -14,6 +14,10 @@ from .dummy import Dummy as __Dummy
 
 dummy = __Dummy()
 
+from .pareto_ranking import ParetoRanking as __ParetoRanking
+
+paretoranking = __ParetoRanking
+
 __all__ = [
     "update_a_df_column",
     "pngTable",
@@ -24,4 +28,5 @@ __all__ = [
     "col",
     "uni",
     "dummy",
+    "paretoranking",
 ]

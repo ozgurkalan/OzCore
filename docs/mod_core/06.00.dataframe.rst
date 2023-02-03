@@ -5,3 +5,13 @@ Dataframe Helper Functions
 
 .. automodule:: ozcore.core.df.dataframe
 	:members:
+
+
+
+==================
+Pareto and Ranking
+==================
+
+
+.. automodule:: ozcore.core.df.pareto_ranking
+	:members:
