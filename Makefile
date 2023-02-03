@@ -1,4 +1,4 @@
-.PHONY: all docs
+.PHONY: all 
 
 all: version docs
 
@@ -7,7 +7,8 @@ help:
 	@echo "all: make all pre-publish actions":
 	@echo "version: bump package version from latest tag"
 	@echo "docs: prepare docs for publish"
-
+	@echo "serve-docs: hot-reload serve docs"
+	@echo "build-docs:build sphinx to see errors"
 
 version:
 	@poetry version $(shell dunamai from any)
