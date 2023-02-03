@@ -19,3 +19,7 @@ docs:
 serve-docs:
 	@echo "hotreload and serve sphinx..."
 	@sphinx-autobuild docs docs/_build/html --port 5555
+
+build-docs:
+	@echo "build sphinx to see error messages"
+	@sphinx-build docs docs/_build/html
