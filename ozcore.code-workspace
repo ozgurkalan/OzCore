@@ -1,36 +1,39 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"files.exclude": {
-			"**/.git": true,
-			"**/.svn": true,
-			"**/.hg": true,
-			"**/CVS": true,
-			"**/.DS_Store": true,
-			"**/env": true,
-      		"**/.idea": true,
-			"**/__archive__": true,
-			"**/_gsdata_":true,
-			"**/node_modules":true, 
-			"**/.venv":true,
-		},
-		"workbench.colorCustomizations":{
-			"statusBar.background": "#c506c5",
-		},
-		
-		"python.defaultInterpreterPath": ".venv",
-		"isort.check": true,
-		"python.formatting.provider": "none",
-		"[python]": {
-			"editor.defaultFormatter": "ms-python.black-formatter"
-		},
-		"black-formatter.args": [
-			"max-line-length = 88"
-		]
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/env": true,
+      "**/.idea": true,
+      "**/__archive__": true,
+      "**/_gsdata_": true,
+      "**/node_modules": true,
+      "**/.venv": true
+    },
+    "workbench.colorCustomizations": {
+      "statusBar.background": "#c506c5"
+    },
 
-	}
+    "python.defaultInterpreterPath": ".venv",
+    "isort.check": true,
+    "python.formatting.provider": "none",
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "black-formatter.args": ["max-line-length = 88"],
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "black-formatter.importStrategy": "fromEnvironment",
+    "black-formatter.logLevel": "info",
+    "isort.importStrategy": "fromEnvironment",
+    "isort.logLevel": "info"
+  }
 }
