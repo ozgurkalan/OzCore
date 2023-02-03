@@ -264,7 +264,7 @@ class Dummy:
         returns:
             Dataframe shape(50,2)
             
-        hints:
+        hint:
             * begins with Tanzania, score 1 and ends with Germany score 50
             * 50 countries 
         """
