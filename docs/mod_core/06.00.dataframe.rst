@@ -1,7 +1,7 @@
-========================
-Dataframe Helper Methods
-========================
+==========================
+Dataframe Helper Functions
+==========================
 
 
-.. automodule:: ozcore.core.data.dataframe
+.. automodule:: ozcore.core.df.dataframe
 	:members:

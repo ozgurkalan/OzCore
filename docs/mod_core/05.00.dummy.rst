@@ -2,6 +2,6 @@
 Dummy Records
 =============
 
-.. automodule:: ozcore.core.data.dummy
+.. automodule:: ozcore.core.df.dummy
 	:members:
 	:no-special-members:

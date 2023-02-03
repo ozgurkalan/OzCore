@@ -4,5 +4,5 @@ Jupyter Notebook Setup
 
 
 
-.. automodule:: ozcore.core.jupyter
+.. automodule:: ozcore.core.utils.jupyter
 	:members:
