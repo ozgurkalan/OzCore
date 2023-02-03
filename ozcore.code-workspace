@@ -23,6 +23,14 @@
 		},
 		
 		"python.defaultInterpreterPath": ".venv",
+		"isort.check": true,
+		"python.formatting.provider": "none",
+		"[python]": {
+			"editor.defaultFormatter": "ms-python.black-formatter"
+		},
+		"black-formatter.args": [
+			"max-line-length = 88"
+		]
 
 	}
 }
