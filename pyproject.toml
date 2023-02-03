@@ -72,7 +72,7 @@ vcs = "git"
 style = "semver"
 
 [tool.black]
-target-version = ['py39']
+target-version = ['py36', 'py37', 'py38']
 exclude = '''
 (
     asv_bench/env
