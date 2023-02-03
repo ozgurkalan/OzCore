@@ -21,11 +21,11 @@ from .html_markdown import(
 
 # zipper functions
 from .zipper import (
-                    unzip, # download and unzip a zip file 
+                    unzip_url, # download and unzip a zip file 
                     )
 
 
 __all__=["jupyter", 
          "dirme", "now_prefix", "serialize_a_json_field", 
          "html_to_markdown", "markdown_to_html",
-         "unzip", ]
+         "unzip_url", ]

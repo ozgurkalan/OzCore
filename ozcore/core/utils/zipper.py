@@ -11,7 +11,7 @@ import typer
 from tqdm.auto import tqdm
 
 @typechecked
-def unzip(url:str, dest:PosixPath, chunk_size:int=1024*1024, remove_zip: bool=False):
+def unzip_url(url:str, dest:PosixPath, chunk_size:int=1024*1024, remove_zip: bool=False):
     """ 
     Downloads and unzips a zip file
     
