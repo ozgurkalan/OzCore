@@ -16,3 +16,6 @@ docs:
 	@echo "creating requirements.txt..."
 	@poetry export -f requirements.txt -o docs/requirements.txt --with dev --without-hashes
 
+serve-docs:
+	@echo "hotreload and serve sphinx..."
+	@sphinx-autobuild docs docs/_build/html --port 5555
