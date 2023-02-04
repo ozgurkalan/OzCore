@@ -1,19 +1,19 @@
 .PHONY: all 
 
-all: version docs
+all: version docs-requirements
 
 help:
 	@echo "Pre-publish actions"
 	@echo "all: make all pre-publish actions":
 	@echo "version: bump package version from latest tag"
-	@echo "docs: prepare docs for publish"
+	@echo "docs-requirements: prepare docs for publish by updating requirements.txt"
 	@echo "serve-docs: hot-reload serve docs"
 	@echo "build-docs:build sphinx to see errors"
 
 version:
 	@poetry version $(shell dunamai from any)
 
-docs:
+docs-requirements:
 	@echo "creating requirements.txt..."
 	@poetry export -f requirements.txt -o docs/requirements.txt --with dev --without-hashes
 
