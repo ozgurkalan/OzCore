@@ -14,10 +14,8 @@ from ozcore.core.path.folders import Folder as __Folder
 
 folder = __Folder()
 
-# # SQL
-from ozcore.core.data.sqlite.sqlite import Sqlite as __sqlite
-
-sql = __sqlite()
+# # Sqlite
+from ozcore.core.data.sqlite.sqlite import Sqlite as sql
 
 # # CSV
 from ozcore.core.data.csv.base import Base as __csv_Base

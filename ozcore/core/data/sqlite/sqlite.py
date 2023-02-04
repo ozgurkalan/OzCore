@@ -29,19 +29,19 @@ class Sqlite(ORM):
 
         from ozcore import core
 
-        core.sql.set_engine(engine=core.sql.engines.engine_name)
+        sql= core.sql(path_to_database)
 
-        core.sql.tables.table_name
-        core.sql.path_to_database
+        sql.tables.table_name
+        sql.path_to_database
 
-        core.sql.read(table_name, engine, limit=100)
+        sql.read(table_name, engine, limit=100)
 
     """
 
     DB_EXTENTIONS = ["db", "sqlite", "sqlite3"]
 
-    def __init__(self):
-        self.engine = None
+    def __init__(self, path: Union[str, PosixPath]):
+        self.engine = self.create_engine(path)
         self.tables_list = []
         self.columns_list = {}
 
