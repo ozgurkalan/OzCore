@@ -4,7 +4,7 @@ sqlite helper methods
 
 
 import enum
-from pathlib import Path, PosixPath
+from pathlib import Path, PosixPath, WindowsPath
 from typing import Union
 
 import pandas as pd
@@ -40,12 +40,12 @@ class Sqlite(ORM):
 
     DB_EXTENTIONS = ["db", "sqlite", "sqlite3"]
 
-    def __init__(self, path: Union[str, PosixPath]):
+    def __init__(self, path: Union[str, PosixPath, WindowsPath]):
         self.engine = self.create_engine(path)
         self.tables_list = []
         self.columns_list = {}
 
-    def create_engine(self, path: Union[str, PosixPath]):
+    def create_engine(self, path: Union[str, PosixPath, WindowsPath]):
         """
         Creates an engine.
 
@@ -72,7 +72,7 @@ class Sqlite(ORM):
 
     def set_engine(
         self,
-        engine: Union[sa.engine.Engine, str, PosixPath],
+        engine: Union[sa.engine.Engine, str, PosixPath, WindowsPath],
         return_engine: bool = False,
     ):
         """
