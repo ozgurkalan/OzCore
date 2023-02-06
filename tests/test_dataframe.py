@@ -145,4 +145,8 @@ def test_uni():
     # WHEN uni is called without a column name or an index
     # THEN raise Exception
     
-     
+def test_search_in_multiindex():
+    # GIVEN a sample data
+    # WHEN searched in the multiindex columns
+    # THEN results is ...
+    pass

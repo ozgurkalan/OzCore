@@ -19,7 +19,7 @@ import numpy as np
 import pandas as pd
 from ozcore import core
 from pandas.core.frame import DataFrame
-from typeguard import check_argument_types
+from typeguard import check_argument_types, typechecked
 
 
 def update_a_df_column(
@@ -307,3 +307,36 @@ def uni(
     else:
         zf = pd.DataFrame(np.unique(zf.to_records(index=None)), columns=zf.columns)
         return zf
+
+@typechecked
+def search_in_multiindex(df: DataFrame,
+    s: Union[str, int],
+    axis: int = 0,):
+    """Search multiindex column names or multiindex index names in a dataframe.
+    
+    
+    parameters:
+        df: Pandas DataFrame, should not be multiindexed.
+        s: str or int, column name or index to search for
+        axis: int, defaults to 0; rows: 0, columns: 1,
+    
+    
+    hint:
+        Useful to locate tupled column or index positions
+    
+    """
+    s = [s]
+    ax = None
+    if axis == 0:
+        ax = df.index
+    else:
+        ax = df.columns
+
+    for _ in range(ax.nlevels):
+        search = ax.get_level_values(_).get_indexer_for(s)
+        if not np.isin([-1], search).all():
+            result = ax[search]
+            break
+        else:
+            result = None
+    return result
