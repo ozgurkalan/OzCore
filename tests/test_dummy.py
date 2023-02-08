@@ -64,5 +64,18 @@ def test_df_country_scores():
     assert df.shape == (50,2)
     
     
+def test_df_sales_per_year():
+    # GIVEN a faker dataframe with a shape of (60,5)
+    df = core.df.dummy.df_sales_per_year
+    # WHEN called from core.df.dummy
+    # THEN should yield the results below
+    assert df.shape == (60,7)
+    assert np.isin(['salesperson', 'industry', 'year', 'transaction', 'unit', 'result', 'rando'], df.columns).all()
+    assert np.isin([2021, 2022, 2023], df.year.unique()).all()
+    assert np.isin(['Automotive','Healthcare','Manufacturing','Hightech','Retail'], df.industry.unique()).all()
+    
+    
+    
+    
     
     

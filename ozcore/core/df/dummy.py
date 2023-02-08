@@ -39,6 +39,7 @@ TODO: col with years
 import pandas as pd
 from pandas.core.frame import DataFrame
 from faker import Faker
+import numpy as np
 
 
 class Dummy:
@@ -273,4 +274,57 @@ class Dummy:
         Faker.seed(0)
         
         df=pd.DataFrame([(fake.country(), _+1 )for _ in range(50)], columns=['country','score'])
+        return df
+    
+    @property
+    def df_sales_per_year(self):
+        """Dataframe with random sales and quantity results per three years
+            Faker seed: 999, numpy random number seed: 99
+        
+        returns:
+            Dataframe shape(60,7)
+            
+        hint:
+            * columns: ['salesperson', 'industry', 'year', 'transaction', 'unit', 'result', 'rando']
+            * years: [2022, 2021, 2023], all int
+            * industry: ['Automotive','Healthcare','Manufacturing','Hightech','Retail']
+            * rando: random number; np.arange(30)
+            * result: float
+        """
+        fake = Faker()
+        Faker.seed(999)
+        np.random.seed(99)
+        df = pd.DataFrame()
+        
+        r = 30
+        f = {}
+        
+        industry = ['Automotive','Healthcare','Manufacturing','Hightech','Retail']
+        year = [2023, 2021, 2022]
+        for i in range(r):
+            f[i] = {}
+            f[i]["salesperson"] = fake.name()
+            f[i]['industry'] = fake.random_element(industry)
+            f[i]['year'] = fake.random_element(year)
+            f[i]['transaction'] = 'sales'
+            f[i]['unit'] = 'USD'
+            f[i]['result'] = np.round(np.random.normal(1000,200)) *1_000
+            f[i]['rando'] = fake.random_element(np.arange(r))
+            
+        df = pd.DataFrame(f).T
+
+        f = {}
+        for i in range(r):
+            f[i] = {}
+            f[i]["salesperson"] = fake.name()
+            f[i]['industry'] = fake.random_element(industry)
+            f[i]['year'] = fake.random_element(year)
+            f[i]['transaction'] = 'quantity'
+            f[i]['unit'] = 'PCS'
+            f[i]['result'] = np.abs(np.round(np.random.normal(50,100)))
+            f[i]['rando'] = fake.random_element(np.arange(r))
+
+        df = pd.concat([df, pd.DataFrame(f).T], ignore_index=True)
+        df = df.astype({'salesperson':object, 'industry':'category', 'year':int, 'transaction':'category', 'unit':'category', 'result':float, 'rando':int}, copy=True)
+        
         return df
