@@ -91,10 +91,7 @@ def pngTable(
     returns:
         png file in Downloads folder
     """
-    if (
-        not isinstance(in_folder, Union[PosixPath, WindowsPath])
-        or not in_folder.exists()
-    ):
+    if not in_folder.exists():
         in_folder = core.folder.Downloads
 
     # file name and path
