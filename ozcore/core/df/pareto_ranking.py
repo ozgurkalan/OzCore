@@ -15,7 +15,7 @@ class ParetoRanking:
         col: str or list, column(s) in the DataFrame for calcultion
     """
 
-    def __init__(self, df: DataFrame, col: str | list) -> None:
+    def __init__(self, df: DataFrame, col: Union[str, list[str]]) -> None:
         self.df = df
         self.col = [col] if isinstance(col, str) else col
 
