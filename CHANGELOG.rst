@@ -1,3 +1,10 @@
+v2.0.1
+~~~~~~
+
+* too many fixes
+* revamped modules
+
+
 v1.1.15
 ~~~~~~~
 
