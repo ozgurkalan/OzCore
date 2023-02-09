@@ -21,7 +21,7 @@ OzCore is my core.
 
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-   :target: https://github.com/psf/black
+    :target: https://github.com/psf/black
 
 
 
@@ -34,7 +34,7 @@ Installation
 
 
 I. Pip simple
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 Published latest stable version
 
 .. code:: bash
@@ -53,7 +53,7 @@ Latest dev version from GitHub
 
 
 III. GitHub clone
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 .. code:: bash
 
@@ -85,6 +85,7 @@ This step copies the ``nbextensions`` javascript and css files into the jupyter 
 .. code:: bash
 
     jupyter contrib nbextension install --system
+
 
 
 
