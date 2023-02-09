@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ozcore"
-version = "1.1.15.post70.dev0+297fd97" # will be overwritten by poetry-dynamic-versioning 
+version = "2.0.1" # will be overwritten by poetry-dynamic-versioning 
 description = "My core."
 authors = ["Ozgur Kalan <ozgurkalan@gmail.com>"]
 readme = "README.rst"
