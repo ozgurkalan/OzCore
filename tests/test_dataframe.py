@@ -1,9 +1,9 @@
-""" dataframe helper function tests 
+""" dataframe helper function tests """
 
-"""
-
+import numpy as np
 import pandas as pd
 import pytest
+
 from ozcore import core
 
 
@@ -122,7 +122,7 @@ def test_col(col, i):
         core.df.col(df=df, i=None, c=None)
     # WHEN col is called without a column name or an index
     # THEN raise Exception
-    
+
 
 def test_uni():
     # GIVEN core.df.dummy.df_dup_parent_child a sample data
@@ -130,23 +130,42 @@ def test_uni():
 
     # WHEN called with an index or a name of a column
     # THEN result is a list of unique records
-    expected = ['root', 'subfolder_A', 'subfolder_B', 'subfolder_C', 'subfolder_D']
+    expected = ["root", "subfolder_A", "subfolder_B", "subfolder_C", "subfolder_D"]
     assert core.df.uni(df, i=0, c=None) == expected
     assert core.df.uni(df, i=None, c="parent") == expected
-    
-    # WHEN called with a list of index or a list of names 
+
+    # WHEN called with a list of index or a list of names
     # THEN result is a dataframe of unique records with a certain shape
-    expected = (14,2)
-    assert core.df.uni(df, i=None, c=["parent","child"]).shape == expected
-    assert core.df.uni(df, i=[0,1], c=None).shape == expected
-    
+    expected = (14, 2)
+    assert core.df.uni(df, i=None, c=["parent", "child"]).shape == expected
+    assert core.df.uni(df, i=[0, 1], c=None).shape == expected
+
     with pytest.raises(Exception):
         core.df.uni(df=df, i=None, c=None)
     # WHEN uni is called without a column name or an index
     # THEN raise Exception
-    
+
+
 def test_search_in_multiindex():
-    # GIVEN a sample data
-    # WHEN searched in the multiindex columns
-    # THEN results is ...
-    pass
+    # GIVEN a sample sales data from dummy with dimensions:
+    # 'salesperson', 'industry', 'year', 'transaction', 'unit', 'result', 'rando'
+    # HAVING turned into a pivot table
+    df = core.df.dummy.df_sales_per_year
+    piv = df.loc[(df.transaction == "sales")].pivot_table(
+        values=["result", "rando"],
+        index=["industry", "transaction", "unit"],
+        aggfunc=np.sum,
+        margins=True,
+        margins_name="\u03A3",
+        columns=["year"],
+        fill_value=0,
+        observed=True,
+    )
+    # WHEN searched in the multiindex columns of the pivot table
+    # THEN results is a dataframe Multiindex type with tupled columns
+    result = core.df.search_in_multiindex(df=piv, s=2023, axis=1).to_list()
+    assert result == [('rando', 2023), ('result', 2023)]
+    assert core.df.search_in_multiindex(df=piv, s=2023, axis=0) is None
+    # THEN results is a dataframe Multiindex type with tupled indices
+    result = core.df.search_in_multiindex(df=piv, s="Retail", axis=0).to_list()
+    assert result == [('Retail', 'sales', 'USD')]

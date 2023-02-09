@@ -8,6 +8,7 @@ from .dataframe import (
     cols,
     col,
     uni,
+    search_in_multiindex,
 )
 
 from .dummy import Dummy as __Dummy
@@ -27,6 +28,7 @@ __all__ = [
     "cols",
     "col",
     "uni",
+    "search_in_multiindex",
     "dummy",
     "paretoranking",
 ]
