@@ -90,7 +90,9 @@ def backup(src: Union[PosixPath,WindowsPath, list[Union[PosixPath, WindowsPath]]
         * if no destination given then current directory will be used
         * if a file path is given as destination, then its parent folder will be used
     """
-    src = [src] if isinstance(src, Union[PosixPath, WindowsPath]) else src
+    if isinstance(src, PosixPath) or isinstance(src, WindowsPath):
+        src = [src]
+        
     # check if src files exist
     [core.folder.check_path(path=e, is_file=True, get_parent=False) for e in src]
 
