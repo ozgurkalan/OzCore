@@ -3,4 +3,4 @@ Development Environment
 =======================
 
 .. TODO::
-    dev environment
+    dev environment is in progress
