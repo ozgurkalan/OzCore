@@ -9,20 +9,23 @@ note:
 # check_module
 from .utils import check_modules
 
-# # df, utils, aggrid
-from ozcore.core import df, utils, aggrid, path
+# # iöport modules
+from ozcore.core import df, utils, aggrid, path, data
 
 # path module::Folder
 folder = path.folder
 
-if check_modules("jupyter","ipyaggrid"):
+# if aggrid module is available
+try:
     # view - aggric
     view = aggrid.view
+except:
+    pass
 
-# # Sqlite
-from ozcore.core.data.sqlite.sqlite import Sqlite as sql
+# if sql module is available
+try:
+    sql = data.sql
+except:
+    pass
 
-# # CSV
-from ozcore.core.data.csv.base import Base as __csv_Base
-csv = __csv_Base()
 
