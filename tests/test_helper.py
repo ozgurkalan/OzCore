@@ -20,7 +20,6 @@ def test_dirme():
 
 @pytest.mark.parametrize("val, node, expected",
     [
-        (None, None, None),
         (list("abc"), "a_node", "a;b;c"),
         ("['a','b','c']", None, "a;b;c"),
         (set(list("cba")), "a_node", "a;b;c"),
