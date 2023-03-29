@@ -25,7 +25,7 @@ if check_modules("jupyter"):
 
 
 # html_markdown functions
-if check_modules("html_to_markdown", "markdown_to_html"):
+if check_modules("markdown2","html2text"):
     from .html_markdown import (
         html_to_markdown,  # clean html and return markdown
         markdown_to_html,  # convert markdown to html
