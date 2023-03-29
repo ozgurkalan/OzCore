@@ -12,7 +12,7 @@ basic usage::
 """
 
 from pathlib import PosixPath, WindowsPath
-from typing import Union
+from typing import Union, List
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -299,7 +299,7 @@ def uni(
 
 @typechecked
 def search_in_multiindex(df: DataFrame,
-    s: Union[str, int],
+    s: Union[str, int, List],
     axis: int = 0,):
     """Search multiindex column names or multiindex index names in a dataframe.
     
