@@ -1,3 +1,8 @@
+v2.0.4
+~~~~~~
+
+* refactored dependencies
+
 v2.0.3
 ~~~~~~
 
