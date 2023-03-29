@@ -38,6 +38,8 @@ ipykernel = { version = "^6.22.0", optional = true }
 ipywidgets = { version = "^8.0.6", optional = true }
 nbformat = { version = "^5.8.0", optional = true }
 jupyter-contrib-nbextensions = { version = "^0.7.0", optional = true }
+ipython = { version = "^8.11.0", optional = true }
+notebook = { version = "^6.5.3", optional = true }
 pydantic = { version = "^1.10.7", optional = true }
 
 [tool.poetry.group.dev.dependencies]
@@ -78,6 +80,8 @@ all = [
   "nbformat",
   "ipyaggrid",
   "jupyter-contrib-nbextensions",
+  "ipython",
+  "notebook",
 ]
 
 
