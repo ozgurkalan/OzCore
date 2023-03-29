@@ -1,3 +1,12 @@
+v2.0.3
+~~~~~~
+
+* refactored init files for modules sqlite, csv
+* added pydantic to requirements optional
+* poetry export requirements.txt has -E all tag
+* removed pngTable function
+
+
 v2.0.2
 ~~~~~~
 
