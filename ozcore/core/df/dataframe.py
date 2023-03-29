@@ -136,7 +136,7 @@ def add_a_col_from_a_df(
 
 @typechecked
 def search(
-    df_to_search: DataFrame, q: str, columns: Union[str, list] = None
+    df_to_search: DataFrame, q: str, columns: Union[str, list, None] = None
 ) -> DataFrame:
     """Search all or any column of a dataframe, where columns having str (type: object)
 
@@ -184,7 +184,7 @@ def cols(df: DataFrame) -> dict:
 
 
 @typechecked
-def col(df: DataFrame, i: int = None, c: str = None) -> Union[int, str, bool]:
+def col(df: DataFrame, i: Union[int, None] = None, c: Union[str, None] = None) -> Union[int, str, bool]:
     """Returns a str or int representing a dataframe column name or index
         Or, checks the column name - index if both params given
 
@@ -209,7 +209,7 @@ def col(df: DataFrame, i: int = None, c: str = None) -> Union[int, str, bool]:
 
 @typechecked
 def uni(
-    df: DataFrame, i: Union[int, list[int]] = None, c: Union[str, list[str]] = None
+    df: DataFrame, i: Union[int, list[int], None] = None, c: Union[str, list[str], None] = None
 ) -> Union[DataFrame, list]:
     """Returns a list or a dataframe containing unique values
 
