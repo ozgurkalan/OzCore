@@ -19,40 +19,9 @@ from typing import Union
 
 import numpy as np
 import pandas as pd
-from IPython.display import display
 from pandas.core.frame import DataFrame
 from typeguard import typechecked
 
-@typechecked
-def dirme(me: object, hiddens: bool = False) -> Union[DataFrame,None]:
-    """lists methods of a given object
-
-    parameters:
-        me:str, module, argument, method
-        hiddens:bool, default=False, shows hidden methods
-
-    returns:
-        * displays module, arg or method as a pandas DataFrame
-        * sets pandas max_rows to len of object
-        * for a module object: the module's attributes.
-        * for a class object:  its attributes, and recursively the attributes of its bases.
-        * for any other object: its attributes, its class's attributes, and recursively the attributes of its class's base classes.
-    """
-
-    if not hiddens:
-        s = pd.Series([e for e in dir(me) if not "__" in e]).sort_values()
-    else:
-        s = pd.Series([e for e in dir(me)]).sort_values()
-
-    if len(s) == 0:
-        raise Exception("")
-
-    op = pd.options.display.max_rows
-    pd.options.display.max_rows = len(s)
-
-    display(pd.DataFrame(s, columns=[me.__name__]))
-
-    pd.options.display.max_rows = op
 
 @typechecked
 def now_prefix(separator: str = "-", format: str = "now") -> str:

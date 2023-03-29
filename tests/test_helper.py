@@ -12,10 +12,6 @@ def test_now_prefix():
     
     assert expected is not None
 
-def test_dirme():
-    result = core.utils.dirme(core)
-    # IPython.display.display has NoneType
-    assert type(result) is type(None)
 
 
 @pytest.mark.parametrize("val, node, expected",

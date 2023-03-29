@@ -15,13 +15,11 @@ from .helper import (
 __all__ += ["now_prefix", "serialize_a_json_field"]
 
 # jupyter
-if check_modules("jupyter"):
+if check_modules("jupyter", "ipython"):
     from .jupyter import Jupyter as __Jupyter
     jupyter = __Jupyter()
-    
-    from .helper import dirme
 
-    __all__ += ["jupyter", "dirme"]
+    __all__ += ["jupyter"]
 
 
 # html_markdown functions
