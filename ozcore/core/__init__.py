@@ -23,6 +23,4 @@ from ozcore.core.data.csv.base import Base as __csv_Base
 csv = __csv_Base()
 
 # # aggrid module
-from ozcore.core.aggrid.aggrid import Grid as __agGrid
-
-view = __agGrid().view
+from ozcore.core import aggrid
