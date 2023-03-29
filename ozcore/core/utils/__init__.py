@@ -22,7 +22,7 @@ from .helper import (
 __all__+=["dirme", "now_prefix", "serialize_a_json_field"]
 
 # html_markdown functions
-if check_modules():
+if check_modules("html_to_markdown", "markdown_to_html"):
   from .html_markdown import(
                             html_to_markdown, # clean html and return markdown
                             markdown_to_html, # convert markdown to html
