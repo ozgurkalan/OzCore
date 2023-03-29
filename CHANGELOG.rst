@@ -2,6 +2,7 @@ v2.0.2
 ~~~~~~
 
 * check_modules function added
+* utils __init__ refactored with check_modules
 
 
 v2.0.1
