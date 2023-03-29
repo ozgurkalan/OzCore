@@ -1,5 +1,4 @@
-"""
-    Check modules
+"""Check modules
 
 prevents importing modules which are not installed
 """
@@ -13,14 +12,17 @@ def check_modules(*args)-> bool:
 
     Check the modules given
     
-    usage::
+    usage
+    -----
+        
         check_modules(*["numpy","Pandas"])
         check_modules("jupyter")
 
-    Returns
+    returns
     -------
-    bool
+        bool
         returns false if any given module not exists
+        
     """
     for arg in args:
         if find_spec(arg) is None:
