@@ -10,7 +10,7 @@ note:
 """
 from pathlib import Path, PosixPath, WindowsPath
 from typing import Union
-from typeguard import check_argument_types
+from typeguard import typechecked
 
 
 class Folder:
@@ -162,6 +162,7 @@ class Folder:
 
         return [e for e in path.iterdir()]
 
+    @typechecked
     def search(
         self, path: Union[str, PosixPath, WindowsPath], file: str
     ) -> list[Union[None, PosixPath, WindowsPath]]:
@@ -179,7 +180,6 @@ class Folder:
             from ozcore import core
             core.path.search(core.path.gDrive.joinpath("folder name"), "*.xlsx")
         """
-        check_argument_types()
 
         path = self.check_path(path, is_file=False, get_parent=True).resolve()
         ls = path.rglob(file)
@@ -187,6 +187,7 @@ class Folder:
 
         return result
 
+    @typechecked
     def is_a_subfolder(
         self,
         path_to_check: Union[str, PosixPath, WindowsPath],
@@ -201,7 +202,6 @@ class Folder:
         return:
             boolean
         """
-        check_argument_types()
 
         path = self.check_path(path_to_check, is_file=False, get_parent=True).resolve()
         base = self.check_path(parent_folder, is_file=False, get_parent=True).resolve()
@@ -213,7 +213,8 @@ class Folder:
             return True
         else:
             return False
-
+    
+    @typechecked
     def check_path(
         self,
         path: Union[str, PosixPath, WindowsPath],
@@ -237,8 +238,6 @@ class Folder:
             Absolute PosixPath or WindowsPath;
             Raise error if directory or file not exists.
         """
-        # check type of the given path parameter
-        check_argument_types()
 
         if isinstance(path, str):
             path = Path(path).absolute()

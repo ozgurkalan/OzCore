@@ -9,7 +9,7 @@ from typing import Union
 
 import pandas as pd
 from pandas.core.frame import DataFrame
-from typeguard import check_argument_types
+from typeguard import typechecked
 
 
 class Base:
@@ -42,6 +42,7 @@ class Base:
         self.searchable = None  # columns to search
         self.path = None
 
+    @typechecked
     def read(
         self, path: Union[str, PosixPath, WindowsPath], verbose: bool = True, **kwargs
     ):
@@ -56,7 +57,6 @@ class Base:
         returns:
             fills self.actual_df and self.df
         """
-        check_argument_types()
 
         if isinstance(path, str):
             path = Path(path)
@@ -76,6 +76,7 @@ class Base:
             logging.warning(f"csv is loaded: " + path.name)
             return df
 
+    @typechecked
     def save(
         self,
         df_altered: DataFrame,
@@ -100,7 +101,6 @@ class Base:
         warning:
             if overwrite is True, dumps given df into file without checking its len with actual_df
         """
-        check_argument_types()
 
         actual = self._actual_df
 
@@ -122,6 +122,7 @@ class Base:
         if verbose:
             logging.warning("file saved!")
 
+    @typechecked
     def search(self, q: str) -> DataFrame:
         """
         search records based on self._searchable argument (col name to search given in child classes)
@@ -129,7 +130,6 @@ class Base:
         returns:
             dataframe slice from search results
         """
-        check_argument_types()
 
         df = self.df
         if self.searchable and len(self.searchable) > 0:

@@ -19,9 +19,10 @@ import numpy as np
 import pandas as pd
 from ozcore import core
 from pandas.core.frame import DataFrame
-from typeguard import check_argument_types, typechecked
+from typeguard import typechecked
 
 
+@typechecked
 def update_a_df_column(
     df_to_update: DataFrame,
     df_as_source: DataFrame,
@@ -44,8 +45,6 @@ def update_a_df_column(
     warning:
         index is reset during the update
     """
-
-    check_argument_types()
 
     # copy df
     df = df_to_update.copy()
@@ -125,7 +124,7 @@ def pngTable(
         plt.show()  # show the result
         plt.close()
 
-
+@typechecked
 def compare_two_df(
     df_1: DataFrame, df_2: DataFrame, col_to_compare: str, side="both"
 ) -> DataFrame:
@@ -145,9 +144,7 @@ def compare_two_df(
         * a dataframe with diffrences of df_1 from df_2
         * empty if all match
     """
-
-    check_argument_types()
-
+    
     df1 = df_1.copy()
     df2 = df_2.copy()
 
@@ -168,6 +165,7 @@ def compare_two_df(
         return both
 
 
+@typechecked
 def add_a_col_from_a_df(
     into_df: DataFrame, from_df: DataFrame, unique_col: str, col_to_add: str
 ) -> DataFrame:
@@ -187,14 +185,12 @@ def add_a_col_from_a_df(
         this method assumes no index
     """
 
-    check_argument_types()
-
     main = into_df.copy()
     source = from_df.copy()
 
     return main.merge(source[[unique_col, col_to_add]], on=unique_col, how="left")
 
-
+@typechecked
 def search(
     df_to_search: DataFrame, q: str, columns: Union[str, list] = None
 ) -> DataFrame:
@@ -211,8 +207,6 @@ def search(
     note:
         index columns are not included.
     """
-
-    check_argument_types()
 
     df = df_to_search.copy()
 
@@ -244,7 +238,7 @@ def cols(df: DataFrame) -> dict:
     """
     return list(zip(df.columns, df.columns.get_indexer(df.columns)))
 
-
+@typechecked
 def col(df: DataFrame, i: int = None, c: str = None) -> Union[int, str, bool]:
     """Returns a str or int representing a dataframe column name or index
         Or, checks the column name - index if both params given
@@ -257,7 +251,6 @@ def col(df: DataFrame, i: int = None, c: str = None) -> Union[int, str, bool]:
     returns:
         int, str or bool
     """
-    check_argument_types()
 
     if i is None and c is None:
         raise Exception("either index or column name must be specified")
@@ -268,7 +261,7 @@ def col(df: DataFrame, i: int = None, c: str = None) -> Union[int, str, bool]:
     elif c is not None and i is not None:
         return c == df.columns[i]
 
-
+@typechecked
 def uni(
     df: DataFrame, i: Union[int, list[int]] = None, c: Union[str, list[str]] = None
 ) -> Union[DataFrame, list]:
@@ -283,7 +276,6 @@ def uni(
         if single parameter given, returns a sorted list,
         otherwise returns a pandas DataFrame with matching unique columns
     """
-    check_argument_types()
 
     if i is None and c is None:
         raise Exception("either index or column name must be specified")

@@ -21,9 +21,9 @@ import numpy as np
 import pandas as pd
 from IPython.display import display
 from pandas.core.frame import DataFrame
-from typeguard import check_argument_types
+from typeguard import typechecked
 
-
+@typechecked
 def dirme(me: object, hiddens: bool = False) -> DataFrame:
     """lists methods of a given object
 
@@ -38,7 +38,6 @@ def dirme(me: object, hiddens: bool = False) -> DataFrame:
         * for a class object:  its attributes, and recursively the attributes of its bases.
         * for any other object: its attributes, its class's attributes, and recursively the attributes of its class's base classes.
     """
-    check_argument_types()
 
     if not hiddens:
         s = pd.Series([e for e in dir(me) if not "__" in e]).sort_values()
@@ -55,7 +54,7 @@ def dirme(me: object, hiddens: bool = False) -> DataFrame:
 
     pd.options.display.max_rows = op
 
-
+@typechecked
 def now_prefix(separator: str = "-", format: str = "now") -> str:
     """datetime today or now as prefix
 
@@ -73,7 +72,6 @@ def now_prefix(separator: str = "-", format: str = "now") -> str:
     hint:
         useful for naming files or folders
     """
-    check_argument_types()
     
     if format == "now":
         format = "%y%m%d" + separator + "%H%M%S"
@@ -82,7 +80,7 @@ def now_prefix(separator: str = "-", format: str = "now") -> str:
 
     return datetime.datetime.today().strftime(format)
 
-
+@typechecked
 def serialize_a_json_field(val, node: str = None) -> Union[set, dict, list, str]:
     """Safely eval a field with a string list or dict inherited from a json file
         e.g. [{name:test}] => list object having dict node 'name'
@@ -100,7 +98,6 @@ def serialize_a_json_field(val, node: str = None) -> Union[set, dict, list, str]
     hint:
         useful in serializing fields in a dataframe having dict like objects
     """
-    check_argument_types()
     
     if val == np.nan:
         return val  # return NaN values back

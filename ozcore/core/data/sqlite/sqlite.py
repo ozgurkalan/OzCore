@@ -9,7 +9,7 @@ from typing import Union
 
 import pandas as pd
 import sqlalchemy as sa
-from typeguard import check_argument_types
+from typeguard import typechecked
 
 from ozcore import core
 
@@ -45,6 +45,7 @@ class Sqlite(ORM):
         self.tables_list = []
         self.columns_list = {}
 
+    @typechecked
     def create_engine(self, path: Union[str, PosixPath, WindowsPath]):
         """
         Creates an engine.
@@ -58,8 +59,6 @@ class Sqlite(ORM):
         note:
             Allowed extensions: "db","sqlite","sqlite3"
         """
-        # check path type
-        check_argument_types()
 
         path = core.folder.check_path(path, is_file=True)
 
@@ -70,6 +69,7 @@ class Sqlite(ORM):
 
         return sa.create_engine("sqlite:///" + str(path), echo=False)
 
+    @typechecked
     def set_engine(
         self,
         engine: Union[sa.engine.Engine, str, PosixPath, WindowsPath],
@@ -98,8 +98,6 @@ class Sqlite(ORM):
             core.sql.set_engine(engine="./sample.db")
 
         """
-        # check argument types
-        check_argument_types()
 
         if isinstance(engine, sa.engine.Engine):
             engine = engine

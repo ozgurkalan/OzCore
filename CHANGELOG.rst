@@ -5,6 +5,7 @@ v2.0.2
 * utils __init__ refactored with check_modules
 * arcname added to zipped files in utils
 * pyproject optionals added: [all] for extras
+* all typeguard previous `check_argument_types` functions replaced with @typechecked wrapper
 
 
 v2.0.1
