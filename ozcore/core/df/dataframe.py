@@ -11,10 +11,8 @@ basic usage::
 
 """
 
-from pathlib import PosixPath, WindowsPath
 from typing import List, Union
 
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from pandas.core.frame import DataFrame
@@ -69,62 +67,6 @@ def update_a_df_column(
     return df
 
 
-def pngTable(
-    df: DataFrame,
-    colwidth_factor: float = 0.20,
-    fontsize: int = 12,
-    formatFloats: bool = True,
-    save: bool = False,
-    in_folder: Union[PosixPath, WindowsPath] = None,
-):
-    """Displays or saves a table as png.
-    Uses matplotlib => pandas plotting table.
-
-    parameters:
-        df: dataframe or pivot table
-        colwidth_factor: float, default 0.20, defines the width of columns
-        fontsize: int, default 12
-        formatFloats: bool, default True, formats as two digit prettiy floats
-        save: saves the png file as table.png
-        in_folder: posixpath, default None, folder to save the png file
-
-    returns:
-        png file in Downloads folder
-    """
-    if not in_folder.exists():
-        in_folder = core.folder.Downloads
-
-    # file name and path
-    path = in_folder.joinpath(f"table-{core.utils.now_prefix()}.png")
-
-    # format floats - two digits
-    if formatFloats:
-        df.applymap(lambda x: "{:,.2f}".format(x) if isinstance(x, float) else x)
-
-    # get pandas.plotting.table
-    table = pd.plotting.table
-
-    fig, ax = plt.subplots(
-        figsize=(1.9 * df.shape[1], 0.3 * df.shape[0])
-    )  # set size frame
-    ax.xaxis.set_visible(False)  # hide the x axis
-    ax.yaxis.set_visible(False)  # hide the y axis
-    ax.set_frame_on(False)  # no visible frame, uncomment if size is ok
-    tabla = table(
-        ax, df, loc="upper left", colWidths=[colwidth_factor] * len(df.columns)
-    )  # where df is your data frame
-    tabla.auto_set_font_size(False)  # Activate set fontsize manually
-    tabla.set_fontsize(fontsize)  # if ++fontsize is necessary ++colWidths
-    tabla.scale(1.2, 1.2)  # change size table
-    if save:
-        plt.savefig(fname=path, bbox_inches="tight", pad_inches=1)  # save
-        # https://stackoverflow.com/questions/56328353/matplotlib-savefig-cuts-off-pyplot-table
-        plt.close()
-        print(f"saved in Downloads folder as {path.stem}.png")
-    else:
-        plt.show()  # show the result
-        plt.close()
-
 @typechecked
 def compare_two_df(
     df_1: DataFrame, df_2: DataFrame, col_to_compare: str, side="both"
@@ -145,7 +87,7 @@ def compare_two_df(
         * a dataframe with diffrences of df_1 from df_2
         * empty if all match
     """
-    
+
     df1 = df_1.copy()
     df2 = df_2.copy()
 
@@ -190,6 +132,7 @@ def add_a_col_from_a_df(
     source = from_df.copy()
 
     return main.merge(source[[unique_col, col_to_add]], on=unique_col, how="left")
+
 
 @typechecked
 def search(
@@ -239,6 +182,7 @@ def cols(df: DataFrame) -> dict:
     """
     return list(zip(df.columns, df.columns.get_indexer(df.columns)))
 
+
 @typechecked
 def col(df: DataFrame, i: int = None, c: str = None) -> Union[int, str, bool]:
     """Returns a str or int representing a dataframe column name or index
@@ -261,6 +205,7 @@ def col(df: DataFrame, i: int = None, c: str = None) -> Union[int, str, bool]:
         return df.columns.get_loc(c)
     elif c is not None and i is not None:
         return c == df.columns[i]
+
 
 @typechecked
 def uni(
@@ -298,22 +243,25 @@ def uni(
         zf = pd.DataFrame(np.unique(zf.to_records(index=None)), columns=zf.columns)
         return zf
 
+
 @typechecked
-def search_in_multiindex(df: DataFrame,
+def search_in_multiindex(
+    df: DataFrame,
     s: Union[str, int, List],
-    axis: int = 0,):
+    axis: int = 0,
+):
     """Search multiindex column names or multiindex index names in a dataframe.
-    
-    
+
+
     parameters:
         df: Pandas DataFrame, should not be multiindexed.
         s: str or int, column name or index to search for
         axis: int, defaults to 0; rows: 0, columns: 1,
-    
-    
+
+
     hint:
         Useful to locate tupled column or index positions
-    
+
     """
     s = [s]
     ax = None
