@@ -3,6 +3,7 @@ v2.0.2
 
 * check_modules function added
 * utils __init__ refactored with check_modules
+* arcname added to zipped files in utils
 
 
 v2.0.1
