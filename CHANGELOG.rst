@@ -1,3 +1,9 @@
+v2.0.5
+~~~~~~
+
+* typing fixes
+* poetry lock updates
+
 v2.0.4
 ~~~~~~
 
