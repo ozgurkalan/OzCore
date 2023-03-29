@@ -36,7 +36,7 @@ jobs:
       run: poetry config virtualenvs.create true
 
     - name: Install dependencies
-      run: poetry install
+      run: poetry install --all-extras
 
     - name: set version 
       run: poetry version $(git describe --tags --abbrev=0)
