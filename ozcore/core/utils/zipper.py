@@ -119,7 +119,7 @@ def backup(src: Union[PosixPath,WindowsPath, list[Union[PosixPath, WindowsPath]]
         compresslevel=9,
     ) as thezip:
         for file in src:
-            thezip.write(file)
+            thezip.write(file, arcname=file.name)
             
     if verbose:
         typer.secho(f"{filename.name} is zipped in \n {dest}.", bold=True, fg="green")
