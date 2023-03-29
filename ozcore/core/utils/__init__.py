@@ -15,10 +15,10 @@ from .helper import (
 __all__ += ["now_prefix", "serialize_a_json_field"]
 
 # jupyter
-if check_modules("jupter"):
+if check_modules("jupyter"):
     from .jupyter import Jupyter as __Jupyter
-
     jupyter = __Jupyter()
+    
     from .helper import dirme
 
     __all__ += ["jupyter", "dirme"]
