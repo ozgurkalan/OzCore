@@ -15,7 +15,7 @@ version:
 
 docs-requirements:
 	@echo "creating requirements.txt..."
-	@poetry export -f requirements.txt -o docs/requirements.txt --with dev --without-hashes
+	@poetry export -f requirements.txt -o docs/requirements.txt --with dev --without-hashes -E all
 
 serve-docs:
 	@echo "hotreload and serve sphinx..."
