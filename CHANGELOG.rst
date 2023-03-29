@@ -1,3 +1,9 @@
+v2.0.2
+~~~~~~
+
+* check_modules function added
+
+
 v2.0.1
 ~~~~~~
 

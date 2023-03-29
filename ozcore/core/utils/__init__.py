@@ -1,6 +1,8 @@
 # # # # # # # # # # # # # # # # # # # # #
 # imports for utils
 
+# import check_modules
+from .__import_check import check_modules
 
 # jupyter
 from .jupyter import Jupyter as __Jupyter
