@@ -24,7 +24,7 @@ from pandas.core.frame import DataFrame
 from typeguard import typechecked
 
 @typechecked
-def dirme(me: object, hiddens: bool = False) -> DataFrame:
+def dirme(me: object, hiddens: bool = False) -> Union[DataFrame,None]:
     """lists methods of a given object
 
     parameters:
