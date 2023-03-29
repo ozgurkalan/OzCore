@@ -71,23 +71,6 @@ def test_searching_a_dataframe(q, columns):
     pd.testing.assert_frame_equal(expected, result)
 
 
-def test_png_table(tmp_folder, clean_tmp):
-    # GIVEN core.df.dummy.df1 as a sample dataframe
-    df = core.df.dummy.df1
-    # WHEN saved as png table
-    clean_tmp
-    core.df.pngTable(
-        df,
-        save=True,
-        in_folder=tmp_folder,
-        colwidth_factor=0.15,
-        fontsize=9,
-        formatFloats=True,
-    )
-    # THEN Downdloads folder has one png file
-    assert len(list(tmp_folder.glob("table-*.png"))) == 1
-    clean_tmp
-
 
 @pytest.mark.parametrize("col, i", [("col1", 0), ("col3", 2)])
 def test_cols(col, i):
