@@ -1,3 +1,11 @@
+v2.0.6
+~~~~~~
+
+* removed dirme func from helpers
+* added ipython and notebook in optional dependencies
+* updated dependencies
+
+
 v2.0.5
 ~~~~~~
 
