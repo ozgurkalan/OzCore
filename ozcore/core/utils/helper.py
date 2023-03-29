@@ -81,7 +81,7 @@ def now_prefix(separator: str = "-", format: str = "now") -> str:
     return datetime.datetime.today().strftime(format)
 
 @typechecked
-def serialize_a_json_field(val, node: str = None) -> Union[set, dict, list, str]:
+def serialize_a_json_field(val, node: str | None = None) -> Union[set, dict, list, str]:
     """Safely eval a field with a string list or dict inherited from a json file
         e.g. [{name:test}] => list object having dict node 'name'
 

@@ -72,8 +72,8 @@ def unzip_url(url:str, dest:PosixPath, chunk_size:int=1024*1024, remove_zip: boo
 @typechecked
 def backup(src: Union[PosixPath,WindowsPath, list[Union[PosixPath, WindowsPath]]],
                       dest: Union[PosixPath, WindowsPath]=None,
-                      suffix: str=None,
-                      verbose: bool=True
+                      suffix: str | None = None,
+                      verbose: bool = True
                       ):
     """Create a backup zip from given files
     
