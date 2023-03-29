@@ -23,7 +23,7 @@ sqlalchemy = { version = "1.4.46", optional = false }
 alembic = { version = "^1.10.2", optional = false }
 numpy = { version = "^1.24.2", optional = false }
 pandas = { version = "^1.5.3", optional = false }
-matplotlib = { version = "^3.7.1", optional = false }
+matplotlib = { version = "^3.7.1", optional = true }
 faker = { version = "^18.3.1", optional = true }
 tqdm = { version = "^4.65.0", optional = true }
 dynaconf = {version = "^3.1.12", optional = true}
@@ -38,6 +38,7 @@ ipykernel = { version = "^6.22.0", optional = true }
 ipywidgets = { version = "^8.0.6", optional = true }
 nbformat = { version = "^5.8.0", optional = true }
 jupyter-contrib-nbextensions = {version = "^0.7.0", optional = true}
+pydantic = {version = "^1.10.7", optional = true}
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.1"
@@ -65,6 +66,7 @@ all = [
   "pandas",
   "sqlalchemy",
   "alembic",
+  "pydantic",
   "requests",
   "tqdm",
   "typer",
@@ -83,6 +85,7 @@ all = [
   "ipyaggrid",
   "jupyter-contrib-nbextensions",
 ]
+
 
 
 [tool.poetry-dynamic-versioning]
