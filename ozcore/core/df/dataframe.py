@@ -12,14 +12,15 @@ basic usage::
 """
 
 from pathlib import PosixPath, WindowsPath
-from typing import Union, List
+from typing import List, Union
 
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from ozcore import core
 from pandas.core.frame import DataFrame
 from typeguard import typechecked
+
+from ozcore import core
 
 
 @typechecked
