@@ -24,7 +24,8 @@ except:
 
 # if sql module is available
 try:
-    sql = data.sql
+    csv = data.csv.csv
+    sql = data.sqlite.sql
 except:
     pass
 
