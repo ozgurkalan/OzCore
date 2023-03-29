@@ -9,6 +9,7 @@ from ozcore import core
 from pathlib import Path, PosixPath, WindowsPath
 import sys
 import pytest
+from typeguard import TypeCheckError
 
 from ozcore.core.path.tmp_folders import TMP_Folder
 from ozcore.core.path.folders import Folder
@@ -41,10 +42,10 @@ class TestFolder():
         # WHEN asked it is a subfolder of tests folder
         # THEN should assert True
         assert folder.is_a_subfolder(path_to_check=self.TEST_FOLDER, parent_folder=Path(".")) == True
-        with pytest.raises(TypeError):
+        with pytest.raises(TypeCheckError):
             folder.is_a_subfolder(path_to_check=self.TEST_FOLDER, parent_folder=[Path(".")])
             # WHEN path param is other than str, POSIXPath or WindowsPath
-            # THEN should raise TypeError
+            # THEN should raise TypeCheckError
             # this also checks the method check_path()
     
     def test_search_a_folder(self):
