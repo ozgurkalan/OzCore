@@ -3,7 +3,6 @@ from typing import Union
 
 import pandas as pd
 from pandas.core.frame import DataFrame
-from typeguard import check_argument_types
 
 
 class ParetoRanking:
