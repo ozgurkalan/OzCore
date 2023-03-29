@@ -7,11 +7,11 @@ note:
 
 """
 
-# # df and utils
-from ozcore.core import df, utils
+# # df, utils, aggrid
+from ozcore.core import df, utils, aggrid
+
 # path module::Folder
 from ozcore.core.path.folders import Folder as __Folder
-
 folder = __Folder()
 
 # # Sqlite
@@ -19,8 +19,5 @@ from ozcore.core.data.sqlite.sqlite import Sqlite as sql
 
 # # CSV
 from ozcore.core.data.csv.base import Base as __csv_Base
-
 csv = __csv_Base()
 
-# # aggrid module
-from ozcore.core import aggrid
