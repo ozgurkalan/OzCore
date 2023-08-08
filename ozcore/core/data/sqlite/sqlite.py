@@ -143,10 +143,11 @@ class Sqlite(ORM):
         if isinstance(table_name, enum.Enum):
             table_name = table_name.name
 
-        if not engine.has_table(table_name):
+        if not self.table_exists(table_name):
             raise Exception("table name not found in the database!")
-
-        cols = [col for col in sa.Table(table_name, sa.metadata()).columns]
+        metadata = sa.MetaData()
+        metadata.reflect(engine)
+        cols = [col for col in sa.Table(table_name, metadata).columns]
         names = [e.name for e in cols]
         dic = dict(e for e in zip(names, cols))
 
@@ -221,7 +222,7 @@ class Sqlite(ORM):
         if isinstance(table_name, enum.Enum):
             table_name = table_name.name
 
-        if not engine.has_table(table_name):
+        if not self.table_exists(table_name):
             raise Exception("table name not found in the database!")
 
         sql = "SELECT * from " + table_name

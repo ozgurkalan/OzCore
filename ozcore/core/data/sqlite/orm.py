@@ -46,11 +46,11 @@ class ORM:
             msg = f"{col} already exists in {table_name}!"
             logging.error(msg)
             raise Exception(msg)
-        elif not isinstance(type_, sa.sql.visitors.VisitableType):
-            # sa.sql.visitors.VisitableType checks if the type_ argument is an Sqlalchemy type
-            msg = f"{type(type_)} is not an Sqlalchemy type!"
-            logging.error(msg)
-            raise Exception(msg)
+        # elif not isinstance(type_, sa.sql.visitors.Visitable):
+        #     # sa.sql.visitors.VisitableType checks if the type_ argument is an Sqlalchemy type
+        #     msg = f"{type(type_)} is not an Sqlalchemy type!"
+        #     logging.error(msg)
+        #     raise Exception(msg)
 
         with self.engine.connect() as conn:
             ctx = alembic.runtime.migration.MigrationContext.configure(conn)
@@ -130,10 +130,10 @@ class ORM:
         elif not self.column_exists(table_name, col):
             logging.error(f"{col} does not exists in {table_name}!")
             return False
-        elif not isinstance(type_, sa.sql.visitors.VisitableType):
-            # sa.sql.visitors.VisitableType checks if the type_ argument is an Sqlalchemy type
-            logging.error(f"{type(type_)} is not an Sqlalchemy type!")
-            return False
+        # elif not isinstance(type_, sa.sql.visitors.Visitable):
+        #     # sa.sql.visitors.VisitableType checks if the type_ argument is an Sqlalchemy type
+        #     logging.error(f"{type(type_)} is not an Sqlalchemy type!")
+        #     return False
 
         with self.engine.connect() as conn:
             ctx = alembic.runtime.migration.MigrationContext.configure(conn)
@@ -159,8 +159,9 @@ class ORM:
         if not self.table_exists(table_name):
             logging.error(f"{table_name} does not exists in this database!")
             return False
-
-        return sa.Table(table_name, sa.metadata())
+        metadata = sa.MetaData()
+        metadata.reflect(self.engine)
+        return sa.Table(table_name, metadata)
 
     def sa_column(self, table_name: str, column_name: str):
         """
@@ -200,9 +201,12 @@ class ORM:
         tbl = self.sa_table(table_name)
         col = self.sa_column(tbl, column_name)
 
-        tbl.update().where(tbl.c[compare_column] == compare_val).values(
-            {column_name: val}
-        ).execute()
+        with self.engine.connect() as conn:
+            expr = tbl.update().where(tbl.c[compare_column] == compare_val).values(
+                {column_name: val}
+            )
+            conn.execute(expr)
+            conn.commit()
 
     def sa_update_a_column(self, table_name, column_name, compare_column, source_df):
         """
