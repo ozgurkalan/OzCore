@@ -131,11 +131,7 @@ class TestSqlite:
     @pytest.fixture()
     def sql(self, tmpdir):
         return core.sql(Path(tmpdir).joinpath("sample.db"))
-    
-    def test_metadata_of_set_engine(self, sql):
-        # WHEN sql metadata is available
-        # THEN should be a member of SQlAlchemy MetaData type
-        assert isinstance(sql.metadata, sa.MetaData)
+
         
         
     def test_tables_in_sample_db(self, sql):

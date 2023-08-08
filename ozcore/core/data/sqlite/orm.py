@@ -160,7 +160,7 @@ class ORM:
             logging.error(f"{table_name} does not exists in this database!")
             return False
 
-        return sa.Table(table_name, self.metadata)
+        return sa.Table(table_name, sa.metadata())
 
     def sa_column(self, table_name: str, column_name: str):
         """

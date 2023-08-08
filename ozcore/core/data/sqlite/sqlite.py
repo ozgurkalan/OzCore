@@ -110,16 +110,6 @@ class Sqlite(ORM):
             return engine
 
     @property
-    def metadata(self):
-        """
-        returns sqlalchemy metadata of the current engine
-
-        """
-        metadata = sa.MetaData(self.engine)
-        metadata.reflect(self.engine)
-        return metadata
-
-    @property
     def tables(self):
         """
         enum tables in a database
@@ -132,7 +122,7 @@ class Sqlite(ORM):
 
             core.sql.tables.table_name
         """
-        tables = self.engine.table_names()
+        tables = sa.inspect(self.engine).get_table_names()
         en = enum.IntEnum("tables", tables)
         self.tables_list = [e.name for e in en]
         return en
@@ -156,7 +146,7 @@ class Sqlite(ORM):
         if not engine.has_table(table_name):
             raise Exception("table name not found in the database!")
 
-        cols = [col for col in sa.Table(table_name, self.metadata).columns]
+        cols = [col for col in sa.Table(table_name, sa.metadata()).columns]
         names = [e.name for e in cols]
         dic = dict(e for e in zip(names, cols))
 
