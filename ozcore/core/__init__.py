@@ -9,8 +9,8 @@ note:
 # check_module
 from .utils import check_modules
 
-# # iöport modules
-from ozcore.core import df, utils, aggrid, path, data
+# # import modules
+from . import df, utils, aggrid, path, data
 
 # path module::Folder
 folder = path.folder
