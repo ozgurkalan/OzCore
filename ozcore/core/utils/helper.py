@@ -15,7 +15,8 @@ serialize_a_jason_field::
 """
 import ast  # for safe eval of list nodes in json fields (ast.literal_eval(s))
 import datetime
-from typing import Union
+from typing import Union, Iterable
+import re
 
 import numpy as np
 import pandas as pd
@@ -86,3 +87,37 @@ def serialize_a_json_field(val, node: Union[str, None] = None) -> Union[set, dic
 
     except:
         return val  # if try is not successful, return back the value
+
+@typechecked
+def search_iter(iter: Iterable, s: str=None) -> list:
+    """search in a list
+
+    parameters:
+        iter: iterable, an iterable (list, tuple, set) to search in
+        s: str, a string to search in the list, default None
+
+    returns:
+        list, a list of matched items
+    """
+    s = "" if s is None else s
+    
+    res = list(filter(lambda v: re.search(s, v), iter))
+    
+    return res
+
+@typechecked
+def dirme(obj: object, s:str=None) -> list:
+    """dir() of an object as list search in the list
+
+    parameters:
+        obj: object, any object
+        s: str, default None, a string to filter the dir() results
+
+    returns:
+        list, dir() of the object
+
+    hint:
+        useful in getting the dir() of an object as list or searching in the dir() of an object
+    """
+    
+    return search_iter(dir(obj), s)

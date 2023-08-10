@@ -10,9 +10,11 @@ __all__ = ["check_modules"]
 from .helper import (
     now_prefix,  # datetime today or now as prefix
     serialize_a_json_field,  # validate and join nodes of json or dict
+    search_iter,  # search for a pattern in an iterable
+    dirme,  # list attributes of a class
 )
 
-__all__ += ["now_prefix", "serialize_a_json_field"]
+__all__ += ["now_prefix", "serialize_a_json_field", "dirme", "search_iter"]
 
 # jupyter
 if check_modules("jupyter", "ipython"):
