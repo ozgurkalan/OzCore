@@ -7,7 +7,7 @@ note:
 
 """
 # check_module
-from .utils import check_modules, dirme, search_iter
+from .utils import check_modules, dirme, search_iter, tempo
 
 # # import modules
 from . import df, utils, aggrid, path, data

@@ -41,3 +41,10 @@ if check_modules("tqdm", "requests"):
     )
 
     __all__ += ["unzip_url", "backup"]
+
+
+# temporal functions
+from .temporal import Tempo as __Tempo
+tempo = __Tempo()
+
+__all__ += ["tempo"]
