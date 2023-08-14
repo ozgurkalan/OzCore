@@ -88,7 +88,6 @@ def serialize_a_json_field(val, node: Union[str, None] = None) -> Union[set, dic
     except:
         return val  # if try is not successful, return back the value
 
-@typechecked
 def search_iter(iter: Iterable, s: str=None) -> list:
     """search in a list
 
@@ -105,7 +104,6 @@ def search_iter(iter: Iterable, s: str=None) -> list:
     
     return res
 
-@typechecked
 def dirme(obj: object, s:str=None) -> list:
     """dir() of an object as list search in the list
 
