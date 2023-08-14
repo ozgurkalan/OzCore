@@ -15,7 +15,7 @@ files = [
 name = "alembic"
 version = "1.11.2"
 description = "A database migration tool for SQLAlchemy."
-optional = false
+optional = true
 python-versions = ">=3.7"
 files = [
     {file = "alembic-1.11.2-py3-none-any.whl", hash = "sha256:7981ab0c4fad4fe1be0cf183aae17689fe394ff874fd2464adb774396faf0796"},
@@ -2027,7 +2027,7 @@ source = ["Cython (>=0.29.35)"]
 name = "mako"
 version = "1.2.4"
 description = "A super-fast templating language that borrows the best ideas from the existing templating languages."
-optional = false
+optional = true
 python-versions = ">=3.7"
 files = [
     {file = "Mako-1.2.4-py3-none-any.whl", hash = "sha256:c97c79c018b9165ac9922ae4f32da095ffd3c4e6872b45eded42926deea46818"},
@@ -4367,22 +4367,22 @@ files = [
 
 [[package]]
 name = "typeguard"
-version = "3.0.2"
+version = "4.1.0"
 description = "Run-time type checker for Python"
-optional = false
+optional = true
 python-versions = ">=3.7.4"
 files = [
-    {file = "typeguard-3.0.2-py3-none-any.whl", hash = "sha256:bbe993854385284ab42fd5bd3bee6f6556577ce8b50696d6cb956d704f286c8e"},
-    {file = "typeguard-3.0.2.tar.gz", hash = "sha256:fee5297fdb28f8e9efcb8142b5ee219e02375509cd77ea9d270b5af826358d5a"},
+    {file = "typeguard-4.1.0-py3-none-any.whl", hash = "sha256:94a8a8974eca6b980c0fd05a032f283914426ad9f2958b342075358e2744226a"},
+    {file = "typeguard-4.1.0.tar.gz", hash = "sha256:b05a54bb0276eefd28880df42e004a71e699c8081fcb9d0536b2ceb01019f60c"},
 ]
 
 [package.dependencies]
 importlib-metadata = {version = ">=3.6", markers = "python_version < \"3.10\""}
-typing-extensions = {version = ">=4.4.0", markers = "python_version < \"3.11\""}
+typing-extensions = {version = ">=4.7.0", markers = "python_version < \"3.12\""}
 
 [package.extras]
-doc = ["packaging", "sphinx-autodoc-typehints (>=1.2.0)", "sphinx-rtd-theme"]
-test = ["mypy (>=0.991)", "pytest (>=7)"]
+doc = ["Sphinx (<7)", "packaging", "sphinx-autodoc-typehints (>=1.2.0)", "sphinx-rtd-theme"]
+test = ["mypy (>=1.2.0)", "pytest (>=7)"]
 
 [[package]]
 name = "typer"
@@ -4690,4 +4690,4 @@ all = ["dateparser", "duckdb", "dynaconf", "faker", "html2text", "html5lib", "ib
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "0e43fc4cd24056cf2d7b5156b702a42adb0f34fb35984175b7085faa9170f335"
+content-hash = "57ebac2da458ccce63ced17de45a54df18e42b742443cc49c54c6f1b77292bc2"
