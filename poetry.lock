@@ -15,7 +15,7 @@ files = [
 name = "alembic"
 version = "1.11.2"
 description = "A database migration tool for SQLAlchemy."
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "alembic-1.11.2-py3-none-any.whl", hash = "sha256:7981ab0c4fad4fe1be0cf183aae17689fe394ff874fd2464adb774396faf0796"},
@@ -1977,7 +1977,7 @@ source = ["Cython (>=0.29.35)"]
 name = "mako"
 version = "1.2.4"
 description = "A super-fast templating language that borrows the best ideas from the existing templating languages."
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "Mako-1.2.4-py3-none-any.whl", hash = "sha256:c97c79c018b9165ac9922ae4f32da095ffd3c4e6872b45eded42926deea46818"},
@@ -4620,4 +4620,4 @@ all = ["dateparser", "duckdb", "dynaconf", "faker", "html2text", "html5lib", "ib
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "d6f8cf3d1f876e6f83d768c145d767a0243d1dee437d12f402521b62029c864c"
+content-hash = "11467f96f234e63a201828245965325588c72d539c394b77d1f1422aee6fc463"

@@ -20,8 +20,8 @@ python = "^3.10"
 typeguard = { version = "^4.1.0" }
 typer = { version = "^0.7.0" }
 sqlalchemy = "^2.0.19"
-alembic = { version = "^1.11.2", optional = true }
-numpy = { version = "^1.25.2", optional = true }
+alembic = { version = "^1.11.2" }
+numpy = { version = "^1.25.2" }
 pandas = "^2.0.3"
 matplotlib = { version = "^3.7.1", optional = true }
 faker = "^19.3.0"
